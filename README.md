@@ -1,7 +1,11 @@
 # Data Wrangling en R
 
-Curso de manipulación de datos en el lenguaje de programación R con el esquema de data.table
+## Objetivo y Descripción del curso
+Este curso se enfocará a la utilización de R, bajo la filosofía *tidy data*,
+para la extracción, transformación y exportación de datos.
 
+R es un lenguaje de programación interpretado, de distribución libre, bajo Licencia GNU, 
+y se mantiene en un ambiente para el cómputo estadístico y gráfico[1]. [https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf]  
 
 ## Requisitos
 

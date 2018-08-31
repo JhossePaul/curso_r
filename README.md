@@ -15,8 +15,9 @@ y se mantiene en un ambiente para el cómputo estadístico y gráfico..." [https
 Pretendemos ayudarles a conocer una herramienta más, que les facilite el manejo 
 de información (tablas dinámicas, conteos y resúmenes de datos), de una manera más 
 eficiente. 
+
 Para poder aprovechar el curso es necesario tener la disposición de aprender 
-algo nuevo, un pequeño *background* de programación:
+algo nuevo y un pequeño *background* de programación:
 
  - Haber hecho una macro.
  - Utilizar funciones de BUSCARV, BUSCARH, etc...

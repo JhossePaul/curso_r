@@ -2,10 +2,26 @@
 
 ## Objetivo y Descripción del curso
 Este curso se enfocará a la utilización de R, bajo la filosofía *tidy data*,
-para la extracción, transformación y exportación de datos.
+para la extracción, transformación y exportación de datos desde diferentes fuentes:
 
-R es un lenguaje de programación interpretado, de distribución libre, bajo Licencia GNU, 
-y se mantiene en un ambiente para el cómputo estadístico y gráfico[1]. [https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf]  
+ - CSV
+ - Excel
+ - .txt
+ - Otros
+
+"R es un lenguaje de programación interpretado, de distribución libre, bajo Licencia GNU, 
+y se mantiene en un ambiente para el cómputo estadístico y gráfico..." [https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf]
+
+Pretendemos ayudarles a conocer una herramienta más, que les facilite el manejo 
+de información (tablas dinámicas, conteos y resúmenes de datos), de una manera más 
+eficiente. 
+Para poder aprovechar el curso es necesario tener la disposición de aprender 
+algo nuevo, un pequeño *background* de programación:
+
+ - Haber hecho una macro.
+ - Utilizar funciones de BUSCARV, BUSCARH, etc...
+ - Realizar tablas dinámicas en excel.
+ 
 
 ## Requisitos
 

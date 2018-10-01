@@ -22,8 +22,8 @@ para la extracción, transformación y exportación de datos desde diferentes fu
  - .txt
  - Otros
 
-"R es un lenguaje de programación interpretado, de distribución libre, bajo Licencia GNU, 
-y se mantiene en un ambiente para el cómputo estadístico y gráfico..." [https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf]
+"[R](https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf) es un lenguaje de programación interpretado, de distribución libre, bajo Licencia GNU, 
+y se mantiene en un ambiente para el cómputo estadístico y gráfico..."
 
 Pretendemos ayudarles a conocer una herramienta más, que les facilite el manejo 
 de información (tablas dinámicas, conteos y resúmenes de datos), de una manera más 

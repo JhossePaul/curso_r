@@ -1,0 +1,102 @@
+# R y RStudio
+
+### ¿Qué es R? 
+
+"[R](rstudio) es un lenguaje de programación interpretado, de distribución
+libre, bajo Licencia GNU, y se mantiene en un ambiente para el cómputo
+estadístico y gráfico..."
+
+Destacando que:
+
+- Interpretado: No hay compilación. El lenguaje tiene un REPL donde se puede
+ejecutar el código directamente.
+- Distribución libre: Se distribuye bajo una licensia (GPL-3)[gpl]. No tiene
+ningún costo ni garantía.
+
+Además es bueno notar las siguientes características del lenguaje:
+
+- Debilmente tipado: No existen definiciones formales de tipo de dato. Los
+tipos primitivos se heredan directamente de los tipos fundamentales de C.
+- Dinámicamente tipado: No hay declaración de tipo de datos, por lo tanto,
+no tienen un tipo fijo y puede ser cohercionado.
+- Lenguaje fundamentalmente funcional, aunque tiene soporte para procedural y 
+orientado a objetos.
+- Es la primera opción de publicación de nuevos métodos estadísticos por la
+académia.
+
+Estas características le otorgan una posición intermedia entre usabilidad y
+performance que ha sido muy valorada por la comunidad estadística. La sintáxis
+del lenguaje es muy intuitiva y orientada a los datos. Además, cuenta con un
+amplio soporte para visualización de datos. Por los estas razones es considerada
+la _lingua franca_ del análisis estadístico.
+
+Otros lenguajes que compiten en este ámbito con R son, Python, Scala, C++ y
+Julia, cada uno con diferentes características y particularidades.
+
+### ¿Por qué y cuando usar R?
+
+R es una excelente opción cuando se requiere análisis estadístico, performance
+intermedio, o bien, cuando se requieren hacer visualizaciones de datos
+estáticas. En cambio, se debe evitar R si se require:
+
+- Muchos datos (> 16GB).
+- Desarrollo web.
+- Experiencia de usuario.
+- Alto performance.
+
+Debido a que es un lenguaje interpretado, débilmente y dinámicamente tipado,
+el tiempo de desarrollo de un programa simple que ejecute acciones concretas
+es *mucho menor* que el tiempo de desarrollo en un lenguaje más formal, como
+Java o C++. A cambio de esto, el performance de R es mucho menor que un lenguaje
+compilado, y es incluso menor que el de otros lenguajes interpretados. Para
+solventar esto, R tiene soporte para generar nuestras funciones en otros
+lenguajes (C, Java, C++, Fortran, Python) y ejecutarlas dentro del runtime de 
+R, aunque este procedimiento escapa por mucho el alcance de este curso.
+
+A pesar de que el performance de R no es competencia para otros lenguajes,
+supera por mucho a otras herramientas gráficas como Excel y Access.
+Adicional al performance, existe una clara ventaja de cambiar nuestro esquema de
+trabajo de una interfaz gráfica a un lenguaje de programación y es la
+*reproducibilidad*, es decir, las instrucciones escritas de un procedimiento son
+siempre más eficientes que el uso del mouse, ya que generan menos errores
+por parte del usuario. Acompañando a la reproducibilidad, tenemos el control
+de versiones, ya que podemos detectar la historia de los cambios en las cosas
+escritas.
+
+
+### Benchmark
+#### Runtime
+
+![](assets/benchmark.png)
+
+<iframe width="560" height="315" frameborder="0"
+  allow="autoplay; encrypted-media" allowfullscreen
+  src="https://www.youtube.com/embed/lGjWfMzZFwo"></iframe>
+
+#### Reproducibilidad y control de versiones.
+
+En HiTo tenemos nuestra propia [plataforma](gitlab) de control de versiones para
+código. Para EXCEL tenemos que hacer "respaldos" periódicamente.
+
+### Operaciones básicas
+
+Como en todos los 
+
+
+A diferencia de otros lenguajes, R mantiene una estructur
+
+
+## Instalación
+### Instalación del interprete
+### Instalación de RStudio
+### Instalación de paquetes
+
+## Tour por RStudio
+### Panel de Script
+### Panel de código
+### Environment
+### Paneles misc.
+
+[rstudio]: https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf 
+[gpl]: https://www.gnu.org/licenses/gpl-3.0.html
+[gitlab]: https://git1.hitoad.com.mx/riesgos/

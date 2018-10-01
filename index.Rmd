@@ -10,7 +10,7 @@ biblio-style: apalike
 link-citation: yes
 ---
 
-# Objetivo, Requisitos y Temario Data Wrangling en R
+# Objetivo y Requisitos
 
 ## Objetivo
 

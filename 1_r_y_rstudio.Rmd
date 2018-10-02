@@ -181,26 +181,6 @@ Otros paneles en RStudio son:
 
 Algunos solo se encuentran disponibles dentro de proyectos.
 
-### Operaciones básicas
-
-Las operaciones binarias funcionan como en todos los lenguajes:
-
-```{r operaciones_binarias, echo = TRUE}
-3 + 3
-3 - 3
-3 * 3
-3 / 3
-4 %/% 3
-3 ^ 3
-```
-
-Sin embargo, R generaliza el concepto de operador binario a otras estructuras de
-datos. Este tema lo analizaremos a profundidad más adelante. A modo de ejemplo:
-
-```{r operaciones_binarias_vectores}
-c(1, 2, 3) + 1:3
-1:10 + 1:2
-```
 
 [r_programming]: https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf
 [gpl]: https://www.gnu.org/licenses/gpl-3.0.html

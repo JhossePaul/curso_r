@@ -1,0 +1,153 @@
+# Estructuras de datos
+
+## Operadores binarios
+
+Las operaciones binarias funcionan como en todos los lenguajes:
+
+```{r operaciones_binarias, echo = TRUE}
+3 + 3
+3 - 3
+3 * 3
+3 / 3
+4 %/% 3
+3 ^ 3
+3 == 3
+2 > 3
+1 <= 0
+-1 > -5
+3 != 2
+TRUE | FALSE
+TRUE & FALSE
+```
+
+Sin embargo, R generaliza el concepto de operador binario a otras estructuras de
+datos. Este tema lo analizaremos a profundidad más adelante. A modo de ejemplo:
+
+```{r operaciones_binarias_vectores}
+c(1, 2, 3) + 1:3
+1:10 + 1:2
+```
+
+## Asignación de variables
+
+Podemos hacer que un valor se almacene de manera persistente en la memoria RAM
+asignandola a un _environment_. Para ello simplemente usamos el operador de
+asignación, `<-`:
+
+```{r asignacion}
+x <- 2
+y <- 3
+x * y
+
+z <- x ^ y
+z
+```
+
+Existen otros operadores de asingación, sin embargo, estos no son recomendables
+en las mejores prácticas de programación en R, por lo que no se detallan en este
+curso. La manipulación de environments escapa de los objetivos del curso
+
+## Vectors
+
+Los vectores y las listas son las estructuras fundamentales en R. A partir de
+ellas se construyen todas las demás estructuras de datos más complejas.
+
+A pesar de que en R no existen tipos, la implementación de R requiere que
+existan _clases_ base, para que el interprete pueda usar los _métodos_
+correctos sobre la variable declarada.
+
+```{r atomic_vectors}
+logical_vector <- TRUE
+class(logical_vector)
+
+integer_vector <- 1L
+class(integer_vector)
+
+numeric_vector <- 1
+class(numeric_vector)
+
+complex_vector <- 0.5 + 2i
+class(complex_vector)
+
+character_vector <- "a"
+class(character_vector)
+
+raw_vector <- raw("1")
+class(raw_vector)
+```
+
+Los vectores tienen tres atributos relevantes:
+
+- `typeof`, el tipo con el que se almacenan los datos en RAM. Este tipo es
+análogo a C.
+- `length`, la cantidad de elementos que componen al vector.
+- `attributes`, metadatos arbitrarios.
+
+Para crear vectores con más de un elemento, se usa la función `c` (combine).
+
+```{r numeric_vectors}
+logical_vector <- c(T, FALSE, F, TRUE)
+integer_vector <- 1:10
+numeric_vector <- c(2.7182, 1.6180, 3.1416)
+character_vector <- c("a", "b", "c", "d")
+```
+
+R introduce un tipo derivado de los anteriores, el _factor_. Esta clase combina
+un `integer` vector con una tabla de nombres, que es un vector `character`. Esto
+funciona para poder generar datos con etiquetas sin ocupar mayor espacio en
+memoria (los `integer` ocupan menos memoria que los `character`):
+
+```{r factors}
+factor(c(1, 2, 1, 1, 2, 1, 2), levels = c(1, 2), labels = c("male", "female"))
+```
+
+## Coherción
+
+Como ya se mencionó, R es un lenguaje debilmente y dinámicamente tipado, en
+consecuencia, cualquier valor puede ser comparado con otro:
+
+```{r comparision}
+"3" == 3
+1 == TRUE
+```
+
+Aún más, cualquier valor puede ser combinado con cualquier otro:
+
+```{r combining_classes}
+c("a", 1, 1L, TRUE)
+```
+
+Esta característica es un error muy común para los principiantes en el lenguaje.
+Sobre todo en el uso de vectores `factor`.
+
+```{r factor_vs_caracter}
+factor_vector <-  factor(
+  x = c(1, 2, 3, 1, 2, 3),
+  levels = c(1, 2, 3),
+  labels = c(3, 2, 1)
+)
+as.character(factor_vector) == 1
+as.integer(factor_vector) == 1
+```
+
+Es por eso que se procura evitar la función factor hasta tener un conocimiento
+más profundo de las estructuras de datos.
+
+La regla de coherción es siempre convertir los tipos al tipos más general
+posible, en orden de prioridad:
+
+```
+logical < integer < double < character
+```
+
+Finalmente, podemos cohercionar de manera explícita nuestros datos con la
+familia de funciones `as.*`, como se vió en ejemplo anterior.
+
+## Matrix & Arrays
+
+La primera generalización de un vector, es aumentar la cantidad de dimensiones
+que puede tener. Para ello existe la estructura `matrix`
+
+## Lists
+
+## data.frame, data.table

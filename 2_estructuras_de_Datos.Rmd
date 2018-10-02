@@ -172,6 +172,71 @@ m * m2
 m %*% m2
 ```
 
+Realmente las matrices son arrays de dimension 2. Ambas estructuras generalizan
+el concepto de `length` a `dim`.
+
 ## Lists
 
+Las listas son una generalización, en otro sentido, de los vectores. Un vector
+tiene la limitante de ser una estructura _flat_ y que todos los elementos que
+almacena son de la misma clase. Las listas no tienen estas dos restricciones.
+Cada elemento de una lista puede ser de diferente clase, incluyendo listas, e.g:
+
+```{r lists}
+list(
+  list(1, "a", 5L),
+  raw(0),
+  list(
+    list(
+      list(NA)
+    )
+  )
+)
+```
+
+También podemos nombrar los elementos de una lista con la finalidad de ocupar
+los nombres para extraer los datos.
+
+```{r named_lists}
+list(
+  numeric_vectors = list(
+    numeric_vector = numeric_vector,
+    integer_vector = integer_vector,
+    complex_vector = complex_vector
+  ),
+  character_vector = character_vector,
+  raw_vector = raw_vector
+)
+```
+
 ## data.frame, data.table
+
+Un data.frame es una forma especial de lista con la restricción de que todos los
+elementos de la lista tengan la misma longitud, e.g.
+
+```{r data_frame_from_list}
+random_numbers <- list(
+  uniform_vector = runif(10),
+  normal_vector = rnorm(10),
+  geometric_vector = rgeom(10, 0.1)
+)
+as.data.frame(random_numbers)
+```
+
+O simplemente:
+
+```{r data_frame}
+data.frame(
+  uniform_vector = runif(10),
+  normal_vector = rnorm(10),
+  geometric_vector = rgeom(10, 0.1)
+)
+```
+
+Esta estructura de datos va a ser la principal forma de traducir nuestra forma
+de pensar a R, ya que es lo más cercano a una spreadsheet. En este caso, cada
+columna es una variable o dimensión y es un elemento de una lista.
+
+La librería `data.table` presenta una forma especial de los `data.frame` con
+muchísimas mejoras. Este curso se trata básicamente de como manipular estas
+estructuras de datos.

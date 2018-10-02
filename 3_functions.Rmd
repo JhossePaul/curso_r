@@ -1,0 +1,43 @@
+# Funciones
+
+Las funciones son el componente fundamental de la programación en R. En este 
+curso no nos enfocarémos en como crear funciones, sino como usarlas.
+
+Una función es un bloque de código que ejecuta la lógica deseada. Para ello,
+hay que definir un flujo de información que realice las operaciones que
+deseemos llevar a cabo sobre los datos. Además, las funciones pueden tener
+inputs de información, los cuales son llamados argumentos. Por ejemplo:
+  
+```{r functions}
+f <- function(x) {
+  print(x + 1)
+}
+formals(f)
+body(f)
+f
+f(1)
+```
+
+Como se puede ver en el ejemplo de arriba, no basta con escribir el nombre de la
+función `f` para invocarla, sino que se tiene que colocar un par de paréntesis 
+inmediatamente después de la función.
+
+Las funciones pueden tener argumentos obligados y argumentos opcionales, e.g.
+
+```{r optional_árguments}
+f <- function(x, y = 1) {
+  print(x + y)
+}
+f(1)
+```
+
+Finalmente, las funciones pueden recibir los argumentos de manera nombrada y de
+manera posicional.
+
+```{r positional_named_arguments}
+f <- function(x, y, z) {
+  x / y / z
+}
+
+
+```

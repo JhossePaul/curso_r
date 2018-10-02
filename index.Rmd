@@ -10,7 +10,7 @@ biblio-style: apalike
 link-citation: yes
 ---
 
-# Objetivo, Requisitos y Temario Data Wrangling en R
+# Objetivo y Requisitos
 
 ## Objetivo
 
@@ -45,62 +45,72 @@ algo nuevo y un pequeño *background* de programación:
 ## Temario
 
 - Semana 1: R y RStudio
-    - Introducción a R
-        - ¿Por qué usar R? 
-        - Benchmark (Excel vs R)
-            - Runtime
-            - Reproducibilidad
-        - Operaciones básicas
-    - Instalación
-        - Instalación del interprete
-        - Instalación de RStudio
-        - Instalación de paquetes
-    - Tour por RStudio
-        - Panel de Script
-        - Panel de código
-        - Environment
-        - Paneles misc.
+  - Introducción a R
+    - ¿Por qué usar R? 
+    - Benchmark (Excel vs R)
+      - Runtime
+      - Reproducibilidad
+    - Operaciones básicas
+  - Instalación
+      - Instalación del interprete
+      - Instalación de RStudio
+      - Instalación de paquetes
+  - Tour por RStudio
+      - Panel de Script
+      - Panel de código
+      - Environment
+      - Paneles misc.
 
 - Semana 2: Estructuras de datos
-    - Atomic vectors
-    - Vectors
-    - Matrix & Arrays
-    - Lists
-    - data.frame, data.table
+  - Atomic vectors
+  - Vectors
+  - Matrix & Arrays
+  - Lists
+  - data.frame, data.table
 
-- Semana 3: 
-    - Operaciones vectoriales
-    - Operaciones matriciales
-    - Composición de funciones
+- Semana 3: Funciones 
+  - functions
+  - Operaciones vectoriales
+  - Operaciones matriciales
+  - Extractores
+  - Composición de funciones
 
 - Semana 4: Importar/Exportar datos
-    - read.table
-    - read.csv
-    - fread
-    - readxl
-    - openxlsx
-    - rio
+  - read.table
+  - read.csv
+  - fread
+  - readxl
+  - openxlsx
+  - rio
 
 - Semana 5: Tidy data
+<<<<<<< HEAD
     - Tidy data
     - Wide and Long data
     - dcast y melt
     - merge, rbind, cbind
+=======
+  - Tidy data
+  - Wide data
+  - Long data
+  - dcast y melt
+  - merge, rbind, cbind
+>>>>>>> 9ba4b0952f4acdbe330840610a902b21e6ff58e2
 
 - Semana 6: Introducción a data.table
-    - Eficiencia de data.table, copy y punteros
-    - Filter
-    - Select
-    - Group by
-    - Update
+  - Eficiencia de data.table, copy y punteros
+  - Filter
+  - Select
+  - Group by
+  - Update
 
 - Semana 7: Repaso y ejercicios
-    - GRID
-    - FOVISSSTE histórico
+  - GRID
+  - FOVISSSTE histórico
 
 - Semana 8: Manipulación avanzada
-    - Manipulación de fechas
-    - SDcols
-    - Agregaciones complejas
-    - Forma funcional de asignación
-    - Variables especiales
+  - Manipulación de fechas
+  - SDcols
+  - Agregaciones complejas
+  - Forma funcional de asignación
+  - Variables especiales

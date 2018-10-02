@@ -2,7 +2,7 @@
 
 ### ¿Qué es R? 
 
-"[R](rstudio) es un lenguaje de programación interpretado, de distribución
+"[R](r_programming) es un lenguaje de programación interpretado, de distribución
 libre, bajo Licencia GNU, y se mantiene en un ambiente para el cómputo
 estadístico y gráfico..."
 
@@ -78,25 +78,137 @@ escritas.
 En HiTo tenemos nuestra propia [plataforma](gitlab) de control de versiones para
 código. Para EXCEL tenemos que hacer "respaldos" periódicamente.
 
-### Operaciones básicas
-
-Como en todos los 
-
-
-A diferencia de otros lenguajes, R mantiene una estructur
-
 
 ## Instalación
+
 ### Instalación del interprete
+
+Todos los detalles de la instalación están incluídos en el portal (CRAN)[cran].
+A continuación les dejamos un resumen para los principales sistemas operativos:
+
+#### Windows
+
+1. Entrar a (CRAN)[cran].
+2. Seguir el link (Download R for Windows)[download_cran].
+3. Seguir el link (base)[cran_base].
+4. Descargar la última versión de R en el (link)[download_r].
+5. Ejecutar el instalador con las opciones default.
+
 ### Instalación de RStudio
+
+1. Entrar a la (página de descarga de RStudio)[rstudio].
+2. Descargar la última versión de (Rstudio para Windows)[download_rstudio]
+3. Ejecutar el instalador con las opciones default.
+
 ### Instalación de paquetes
 
-## Tour por RStudio
-### Panel de Script
-### Panel de código
-### Environment
-### Paneles misc.
+Una vez que se tiene instalado el _environment_ de R, podemos instalar las
+paqueterías de diferentes formas. En este curso detallamos la instalación desde
+RStudio y desde la CLI. Ambos métodos requieren conexión a internet.
 
-[rstudio]: https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf 
+#### Instalación desde la CLI
+
+Básicamente todo se encuentra detallado en la documentación de la función
+`install.packages`. Nosotros nos limitaremos a usar su funcionalidad básica.
+Para ello abrimos una consola de R y escribimos el siguiente comando
+
+```{r instalacion_paquetes, eval = FALSE}
+install.packages(c("data.table", "magrittr", "lubridate"))
+```
+
+#### Instalación desde RStudio
+
+Hay dos métodos:
+
+1. Ir a la sección *Packages* (Ctrl + 7).
+2. Click en *Install*.
+3. En el input field *Packages* escribir el nombre de los paquetes requeridos.
+4. Click en el botón de *Install*.
+
+O bien:
+
+1. Ir al menu *Tools*.
+2. Ir a la opción *Install packages...*.
+3. En el input field *Packages* escribir el nombre de los paquetes requeridos.
+4. Click en el botón de *Install*.
+
+## Tour por RStudio
+
+RStudio es un IDE (Integrated Development Environment) para R. Es decir, es una
+interfaz gráfica amigable para el desarrollo de código de R, e.g. integración
+con control de versiones, integración con paquetes de desarrollo, esqueletos y
+boilerplates, shortcuts, code highlight, integración con compiladores, linting,
+integración con bases de datos, paneles para gráficos estáticos e interactivos,
+adminsitración de paquetes, entre otras facilidades.
+
+### Panel del CLI
+
+Este panel es una sesión de R y podemos ejecutar cualquier comando directamente
+en ella. Para enfocarla usamos el shortcut CTRL + 2,
+
+![](assets/0-rstudio.png)
+
+### Panel de script
+
+Podemos crear un script nuevo con Ctrl + Shift + N, o bien, enfocar el script
+actual con Ctrl + 1. Una vez en el script, podemos enviar el código de un bloque
+al CLI con CTRL + ENTER.
+
+![](assets/01-script.png)
+
+### Environment
+
+Las variables declaradas en la sesión están listadas en el environment. Podemos
+enfocarlo con CTRL + 8.
+
+![](assets/02-environment.png)
+
+### Paneles miscelaneos
+
+Otros paneles en RStudio son:
+
+- Files: Nos permite ver los archivos del proyecto, renombrarlos y eliminarlos.
+- Plots: Visualizaciones estáticas.
+- Packages: Administración de paquetes. Instalar, remover, actualizar.
+- Help: Sistema de ayuda.
+- Viewer: Visualizaciones interactivas.
+- History: Historial de comandos ejecutados.
+- Connections: Conexiones a bases de datos.
+- Build: Estatus de compilaciones.
+- Git: Sistema de control de versiones.
+- Terminal: CLI del sistema operativo.
+- Jobs: Tareas en segundo plano..
+
+Algunos solo se encuentran disponibles dentro de proyectos.
+
+### Sistema de ayuda
+
+Se puede acceder al sistema de ayuda con los siguientes méetodos:
+
+- En el panel *Help* (CTRL + 3).
+- Colocando el cursor sobre una función y apretando F1.
+- Con la función de ayuda `?` o búsqueda en la ayuda `??`.
+
+La documentación de R es muy completa y en cada página de ayuda se detalla para
+que sirve cada función, cuales son sus argumentos y cual es el output esperado.
+Por ejemplo, ejecutar el siguiente comando en la consola:
+
+````{r help, eval = FALSE}
+?c
+```
+
+O bien:
+
+```{r fuzzy_help, eval = FALSE}
+??vector
+```
+
+[r_programming]: https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf
 [gpl]: https://www.gnu.org/licenses/gpl-3.0.html
 [gitlab]: https://git1.hitoad.com.mx/riesgos/
+[cran]: https://cran.r-project.org/
+[download_cran]: https://cran.r-project.org/bin/windows/
+[cran_base]: https://cran.r-project.org/bin/windows/base/
+[download_r]: https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe
+[rstudio]: https://www.rstudio.com/products/rstudio/download/
+[download_rstudio]: https://download1.rstudio.org/RStudio-1.1.456.exe

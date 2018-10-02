@@ -146,7 +146,31 @@ familia de funciones `as.*`, como se vió en ejemplo anterior.
 ## Matrix & Arrays
 
 La primera generalización de un vector, es aumentar la cantidad de dimensiones
-que puede tener. Para ello existe la estructura `matrix`
+que puede tener. Para ello existe la estructura `matrix`:
+
+```{r matrixes}
+m <- matrix(1:9, nrow = 3, ncol = 3)
+m
+
+m2 <- matrix(10:18, 3, 3)
+m2
+```
+
+Para cualquier generalización a dimensiones superiores tenemos los `array`:
+
+```{r arrays}
+a <- array(1:125, dim = c(5, 5, 5))
+a
+```
+
+Del mismo modo que con los vectores, R está diseñado para soportar los
+operadores binarios de manera directa sobre estas estructuras de datos:
+
+```{r matrix_operations}
+5 * a
+m * m2
+m %*% m2
+```
 
 ## Lists
 

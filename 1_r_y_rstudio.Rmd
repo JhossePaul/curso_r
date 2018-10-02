@@ -181,6 +181,27 @@ Otros paneles en RStudio son:
 
 Algunos solo se encuentran disponibles dentro de proyectos.
 
+### Sistema de ayuda
+
+Se puede acceder al sistema de ayuda con los siguientes méetodos:
+
+- En el panel *Help* (CTRL + 3).
+- Colocando el cursor sobre una función y apretando F1.
+- Con la función de ayuda `?` o búsqueda en la ayuda `??`.
+
+La documentación de R es muy completa y en cada página de ayuda se detalla para
+que sirve cada función, cuales son sus argumentos y cual es el output esperado.
+Por ejemplo, ejecutar el siguiente comando en la consola:
+
+````{r help, eval = FALSE}
+?c
+```
+
+O bien:
+
+```{r fuzzy_help, eval = FALSE}
+??vector
+```
 
 [r_programming]: https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf
 [gpl]: https://www.gnu.org/licenses/gpl-3.0.html

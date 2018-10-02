@@ -83,8 +83,7 @@ algo nuevo y un pequeño *background* de programación:
 
 - Semana 5: Tidy data
     - Tidy data
-    - Wide data
-    - Long data
+    - Wide and Long data
     - dcast y melt
     - merge, rbind, cbind
 

@@ -239,4 +239,4 @@ columna es una variable o dimensión y es un elemento de una lista.
 
 La librería `data.table` presenta una forma especial de los `data.frame` con
 muchísimas mejoras. Este curso se trata básicamente de como manipular estas
-estructuras de datos.
+estructuras de datos y conocer las ventajas de usar data.table.

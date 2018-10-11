@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Curso Data Wrangling con R</title>
+  <meta name="description" content="Curso Data Wrangling con R">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Curso Data Wrangling con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Curso Data Wrangling con R" />
+  
+  
+  
+
+<meta name="author" content="Jhosse Paul Márquez Ruíz">
+<meta name="author" content="Fernando Daniel Hernández Sánchez">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="estructuras-de-datos.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objetivo y Requisitos</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i><b>1.1</b> Objetivo</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.2</b> Requisitos</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i><b>1.3</b> Temario</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html"><i class="fa fa-check"></i><b>2</b> R y RStudio</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#que-es-r"><i class="fa fa-check"></i><b>2.0.1</b> ¿Qué es R?</a></li>
+<li class="chapter" data-level="2.0.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#por-que-y-cuando-usar-r"><i class="fa fa-check"></i><b>2.0.2</b> ¿Por qué y cuando usar R?</a></li>
+<li class="chapter" data-level="2.0.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#benchmark"><i class="fa fa-check"></i><b>2.0.3</b> Benchmark</a></li>
+<li class="chapter" data-level="2.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion"><i class="fa fa-check"></i><b>2.1</b> Instalación</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-del-interprete"><i class="fa fa-check"></i><b>2.1.1</b> Instalación del interprete</a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-de-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Instalación de RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>2.1.3</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#tour-por-rstudio"><i class="fa fa-check"></i><b>2.2</b> Tour por RStudio</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#panel-del-cli"><i class="fa fa-check"></i><b>2.2.1</b> Panel del CLI</a></li>
+<li class="chapter" data-level="2.2.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#panel-de-script"><i class="fa fa-check"></i><b>2.2.2</b> Panel de script</a></li>
+<li class="chapter" data-level="2.2.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#environment"><i class="fa fa-check"></i><b>2.2.3</b> Environment</a></li>
+<li class="chapter" data-level="2.2.4" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#paneles-miscelaneos"><i class="fa fa-check"></i><b>2.2.4</b> Paneles miscelaneos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#sistema-de-ayuda"><i class="fa fa-check"></i><b>2.2.5</b> Sistema de ayuda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html"><i class="fa fa-check"></i><b>3</b> Estructuras de datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#operadores-binarios"><i class="fa fa-check"></i><b>3.1</b> Operadores binarios</a></li>
+<li class="chapter" data-level="3.2" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#asignacion-de-variables"><i class="fa fa-check"></i><b>3.2</b> Asignación de variables</a></li>
+<li class="chapter" data-level="3.3" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#vectors"><i class="fa fa-check"></i><b>3.3</b> Vectors</a></li>
+<li class="chapter" data-level="3.4" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#cohercion"><i class="fa fa-check"></i><b>3.4</b> Coherción</a></li>
+<li class="chapter" data-level="3.5" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#matrix-arrays"><i class="fa fa-check"></i><b>3.5</b> Matrix &amp; Arrays</a></li>
+<li class="chapter" data-level="3.6" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#lists"><i class="fa fa-check"></i><b>3.6</b> Lists</a></li>
+<li class="chapter" data-level="3.7" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#data.frame-data.table"><i class="fa fa-check"></i><b>3.7</b> data.frame, data.table</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="funciones.html"><a href="funciones.html"><i class="fa fa-check"></i><b>4</b> Funciones</a><ul>
+<li class="chapter" data-level="4.1" data-path="funciones.html"><a href="funciones.html#composicion-de-funciones"><i class="fa fa-check"></i><b>4.1</b> Composicion de funciones</a></li>
+<li class="chapter" data-level="4.2" data-path="funciones.html"><a href="funciones.html#vocabulario"><i class="fa fa-check"></i><b>4.2</b> Vocabulario</a></li>
+<li class="chapter" data-level="4.3" data-path="funciones.html"><a href="funciones.html#extractores"><i class="fa fa-check"></i><b>4.3</b> Extractores</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>5</b> Tidy Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data.html"><a href="tidy-data.html#necesidad-de-ordenar-la-informacion-antes-del-analisis"><i class="fa fa-check"></i><b>5.1</b> Necesidad de ordenar la información antes del análisis</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data.html"><a href="tidy-data.html#definiciones"><i class="fa fa-check"></i><b>5.1.1</b> Definiciones</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data.html"><a href="tidy-data.html#cuales-son-los-posibles-problemas-de-estos-datos"><i class="fa fa-check"></i><b>5.1.2</b> <strong>¿Cuáles son los posibles problemas de estos datos?</strong></a></li>
+<li class="chapter" data-level="5.1.3" data-path="tidy-data.html"><a href="tidy-data.html#ejercicio-identificar-el-data-set"><i class="fa fa-check"></i><b>5.1.3</b> Ejercicio: Identificar el data set</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data.html"><a href="tidy-data.html#formatos-wide-ancho-and-long-largo"><i class="fa fa-check"></i><b>5.2</b> Formatos Wide (ancho) and Long (largo)</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Curso Data Wrangling con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="r-y-rstudio" class="section level1">
+<h1><span class="header-section-number">2</span> R y RStudio</h1>
+<div id="que-es-r" class="section level3">
+<h3><span class="header-section-number">2.0.1</span> ¿Qué es R?</h3>
+<p>“<a href="r_programming">R</a> es un lenguaje de programación interpretado, de distribución
+libre, bajo Licencia GNU, y se mantiene en un ambiente para el cómputo
+estadístico y gráfico…”</p>
+<p>Destacando que:</p>
+<ul>
+<li>Interpretado: No hay compilación. El lenguaje tiene un REPL donde se puede
+ejecutar el código directamente.</li>
+<li>Distribución libre: Se distribuye bajo una licensia (GPL-3)<a href="https://www.gnu.org/licenses/gpl-3.0.html">gpl</a>. No tiene
+ningún costo ni garantía.</li>
+</ul>
+<p>Además es bueno notar las siguientes características del lenguaje:</p>
+<ul>
+<li>Debilmente tipado: No existen definiciones formales de tipo de dato. Los
+tipos primitivos se heredan directamente de los tipos fundamentales de C.</li>
+<li>Dinámicamente tipado: No hay declaración de tipo de datos, por lo tanto,
+no tienen un tipo fijo y puede ser cohercionado.</li>
+<li>Lenguaje fundamentalmente funcional, aunque tiene soporte para procedural y
+orientado a objetos.</li>
+<li>Es la primera opción de publicación de nuevos métodos estadísticos por la
+académia.</li>
+</ul>
+<p>Estas características le otorgan una posición intermedia entre usabilidad y
+performance que ha sido muy valorada por la comunidad estadística. La sintáxis
+del lenguaje es muy intuitiva y orientada a los datos. Además, cuenta con un
+amplio soporte para visualización de datos. Por los estas razones es considerada
+la <em>lingua franca</em> del análisis estadístico.</p>
+<p>Otros lenguajes que compiten en este ámbito con R son, Python, Scala, C++ y
+Julia, cada uno con diferentes características y particularidades.</p>
+</div>
+<div id="por-que-y-cuando-usar-r" class="section level3">
+<h3><span class="header-section-number">2.0.2</span> ¿Por qué y cuando usar R?</h3>
+<p>R es una excelente opción cuando se requiere análisis estadístico, performance
+intermedio, o bien, cuando se requieren hacer visualizaciones de datos
+estáticas. En cambio, se debe evitar R si se require:</p>
+<ul>
+<li>Muchos datos (&gt; 16GB).</li>
+<li>Desarrollo web.</li>
+<li>Experiencia de usuario.</li>
+<li>Alto performance.</li>
+</ul>
+<p>Debido a que es un lenguaje interpretado, débilmente y dinámicamente tipado,
+el tiempo de desarrollo de un programa simple que ejecute acciones concretas
+es <em>mucho menor</em> que el tiempo de desarrollo en un lenguaje más formal, como
+Java o C++. A cambio de esto, el performance de R es mucho menor que un lenguaje
+compilado, y es incluso menor que el de otros lenguajes interpretados. Para
+solventar esto, R tiene soporte para generar nuestras funciones en otros
+lenguajes (C, Java, C++, Fortran, Python) y ejecutarlas dentro del runtime de
+R, aunque este procedimiento escapa por mucho el alcance de este curso.</p>
+<p>A pesar de que el performance de R no es competencia para otros lenguajes,
+supera por mucho a otras herramientas gráficas como Excel y Access.
+Adicional al performance, existe una clara ventaja de cambiar nuestro esquema de
+trabajo de una interfaz gráfica a un lenguaje de programación y es la
+<em>reproducibilidad</em>, es decir, las instrucciones escritas de un procedimiento son
+siempre más eficientes que el uso del mouse, ya que generan menos errores
+por parte del usuario. Acompañando a la reproducibilidad, tenemos el control
+de versiones, ya que podemos detectar la historia de los cambios en las cosas
+escritas.</p>
+</div>
+<div id="benchmark" class="section level3">
+<h3><span class="header-section-number">2.0.3</span> Benchmark</h3>
+<div id="runtime" class="section level4">
+<h4><span class="header-section-number">2.0.3.1</span> Runtime</h4>
+<p><img src="assets/benchmark.png" /></p>
+<iframe width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="https://www.youtube.com/embed/lGjWfMzZFwo">
+</iframe>
+</div>
+<div id="reproducibilidad-y-control-de-versiones." class="section level4">
+<h4><span class="header-section-number">2.0.3.2</span> Reproducibilidad y control de versiones.</h4>
+<p>En HiTo tenemos nuestra propia <a href="gitlab">plataforma</a> de control de versiones para
+código. Para EXCEL tenemos que hacer “respaldos” periódicamente.</p>
+</div>
+</div>
+<div id="instalacion" class="section level2">
+<h2><span class="header-section-number">2.1</span> Instalación</h2>
+<div id="instalacion-del-interprete" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Instalación del interprete</h3>
+<p>Todos los detalles de la instalación están incluídos en el portal (CRAN)<a href="https://cran.r-project.org/">cran</a>.
+A continuación les dejamos un resumen para los principales sistemas operativos:</p>
+<div id="windows" class="section level4">
+<h4><span class="header-section-number">2.1.1.1</span> Windows</h4>
+<ol style="list-style-type: decimal">
+<li>Entrar a (CRAN)<a href="https://cran.r-project.org/">cran</a>.</li>
+<li>Seguir el link (Download R for Windows)<a href="https://cran.r-project.org/bin/windows/">download_cran</a>.</li>
+<li>Seguir el link (base)<a href="https://cran.r-project.org/bin/windows/base/">cran_base</a>.</li>
+<li>Descargar la última versión de R en el (link)<a href="https://cran.r-project.org/bin/windows/base/R-3.5.1-win.exe">download_r</a>.</li>
+<li>Ejecutar el instalador con las opciones default.</li>
+</ol>
+</div>
+</div>
+<div id="instalacion-de-rstudio" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Instalación de RStudio</h3>
+<ol style="list-style-type: decimal">
+<li>Entrar a la (página de descarga de RStudio)<a href="https://www.rstudio.com/products/rstudio/download/">rstudio</a>.</li>
+<li>Descargar la última versión de (Rstudio para Windows)<a href="https://download1.rstudio.org/RStudio-1.1.456.exe">download_rstudio</a></li>
+<li>Ejecutar el instalador con las opciones default.</li>
+</ol>
+</div>
+<div id="instalacion-de-paquetes" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Instalación de paquetes</h3>
+<p>Una vez que se tiene instalado el <em>environment</em> de R, podemos instalar las
+paqueterías de diferentes formas. En este curso detallamos la instalación desde
+RStudio y desde la CLI. Ambos métodos requieren conexión a internet.</p>
+<div id="instalacion-desde-la-cli" class="section level4">
+<h4><span class="header-section-number">2.1.3.1</span> Instalación desde la CLI</h4>
+<p>Básicamente todo se encuentra detallado en la documentación de la función
+<code>install.packages</code>. Nosotros nos limitaremos a usar su funcionalidad básica.
+Para ello abrimos una consola de R y escribimos el siguiente comando</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;data.table&quot;</span>, <span class="st">&quot;magrittr&quot;</span>, <span class="st">&quot;lubridate&quot;</span>))</a></code></pre></div>
+</div>
+<div id="instalacion-desde-rstudio" class="section level4">
+<h4><span class="header-section-number">2.1.3.2</span> Instalación desde RStudio</h4>
+<p>Hay dos métodos:</p>
+<ol style="list-style-type: decimal">
+<li>Ir a la sección <em>Packages</em> (Ctrl + 7).</li>
+<li>Click en <em>Install</em>.</li>
+<li>En el input field <em>Packages</em> escribir el nombre de los paquetes requeridos.</li>
+<li>Click en el botón de <em>Install</em>.</li>
+</ol>
+<p>O bien:</p>
+<ol style="list-style-type: decimal">
+<li>Ir al menu <em>Tools</em>.</li>
+<li>Ir a la opción <em>Install packages…</em>.</li>
+<li>En el input field <em>Packages</em> escribir el nombre de los paquetes requeridos.</li>
+<li>Click en el botón de <em>Install</em>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="tour-por-rstudio" class="section level2">
+<h2><span class="header-section-number">2.2</span> Tour por RStudio</h2>
+<p>RStudio es un IDE (Integrated Development Environment) para R. Es decir, es una
+interfaz gráfica amigable para el desarrollo de código de R, e.g. integración
+con control de versiones, integración con paquetes de desarrollo, esqueletos y
+boilerplates, shortcuts, code highlight, integración con compiladores, linting,
+integración con bases de datos, paneles para gráficos estáticos e interactivos,
+adminsitración de paquetes, entre otras facilidades.</p>
+<div id="panel-del-cli" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Panel del CLI</h3>
+<p>Este panel es una sesión de R y podemos ejecutar cualquier comando directamente
+en ella. Para enfocarla usamos el shortcut CTRL + 2,</p>
+<p><img src="assets/0-rstudio.png" /></p>
+</div>
+<div id="panel-de-script" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Panel de script</h3>
+<p>Podemos crear un script nuevo con Ctrl + Shift + N, o bien, enfocar el script
+actual con Ctrl + 1. Una vez en el script, podemos enviar el código de un bloque
+al CLI con CTRL + ENTER.</p>
+<p><img src="assets/01-script.png" /></p>
+</div>
+<div id="environment" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Environment</h3>
+<p>Las variables declaradas en la sesión están listadas en el environment. Podemos
+enfocarlo con CTRL + 8.</p>
+<p><img src="assets/02-environment.png" /></p>
+</div>
+<div id="paneles-miscelaneos" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Paneles miscelaneos</h3>
+<p>Otros paneles en RStudio son:</p>
+<ul>
+<li>Files: Nos permite ver los archivos del proyecto, renombrarlos y eliminarlos.</li>
+<li>Plots: Visualizaciones estáticas.</li>
+<li>Packages: Administración de paquetes. Instalar, remover, actualizar.</li>
+<li>Help: Sistema de ayuda.</li>
+<li>Viewer: Visualizaciones interactivas.</li>
+<li>History: Historial de comandos ejecutados.</li>
+<li>Connections: Conexiones a bases de datos.</li>
+<li>Build: Estatus de compilaciones.</li>
+<li>Git: Sistema de control de versiones.</li>
+<li>Terminal: CLI del sistema operativo.</li>
+<li>Jobs: Tareas en segundo plano..</li>
+</ul>
+<p>Algunos solo se encuentran disponibles dentro de proyectos.</p>
+</div>
+<div id="sistema-de-ayuda" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Sistema de ayuda</h3>
+<p>Se puede acceder al sistema de ayuda con los siguientes méetodos:</p>
+<ul>
+<li>En el panel <em>Help</em> (CTRL + 3).</li>
+<li>Colocando el cursor sobre una función y apretando F1.</li>
+<li>Con la función de ayuda <code>?</code> o búsqueda en la ayuda <code>??</code>.</li>
+</ul>
+<p>La documentación de R es muy completa y en cada página de ayuda se detalla para
+que sirve cada función, cuales son sus argumentos y cual es el output esperado.
+Por ejemplo, ejecutar el siguiente comando en la consola:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">?c</a></code></pre></div>
+<p>O bien:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">??vector</a></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="estructuras-de-datos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

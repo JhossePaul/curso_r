@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Curso Data Wrangling con R</title>
+  <meta name="description" content="Curso Data Wrangling con R">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Curso Data Wrangling con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Curso Data Wrangling con R" />
+  
+  
+  
+
+<meta name="author" content="Jhosse Paul Márquez Ruíz">
+<meta name="author" content="Fernando Daniel Hernández Sánchez">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="estructuras-de-datos.html">
+<link rel="next" href="tidy-data.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objetivo y Requisitos</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i><b>1.1</b> Objetivo</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.2</b> Requisitos</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i><b>1.3</b> Temario</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html"><i class="fa fa-check"></i><b>2</b> R y RStudio</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#que-es-r"><i class="fa fa-check"></i><b>2.0.1</b> ¿Qué es R?</a></li>
+<li class="chapter" data-level="2.0.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#por-que-y-cuando-usar-r"><i class="fa fa-check"></i><b>2.0.2</b> ¿Por qué y cuando usar R?</a></li>
+<li class="chapter" data-level="2.0.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#benchmark"><i class="fa fa-check"></i><b>2.0.3</b> Benchmark</a></li>
+<li class="chapter" data-level="2.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion"><i class="fa fa-check"></i><b>2.1</b> Instalación</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-del-interprete"><i class="fa fa-check"></i><b>2.1.1</b> Instalación del interprete</a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-de-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Instalación de RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>2.1.3</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#tour-por-rstudio"><i class="fa fa-check"></i><b>2.2</b> Tour por RStudio</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#panel-del-cli"><i class="fa fa-check"></i><b>2.2.1</b> Panel del CLI</a></li>
+<li class="chapter" data-level="2.2.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#panel-de-script"><i class="fa fa-check"></i><b>2.2.2</b> Panel de script</a></li>
+<li class="chapter" data-level="2.2.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#environment"><i class="fa fa-check"></i><b>2.2.3</b> Environment</a></li>
+<li class="chapter" data-level="2.2.4" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#paneles-miscelaneos"><i class="fa fa-check"></i><b>2.2.4</b> Paneles miscelaneos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#sistema-de-ayuda"><i class="fa fa-check"></i><b>2.2.5</b> Sistema de ayuda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html"><i class="fa fa-check"></i><b>3</b> Estructuras de datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#operadores-binarios"><i class="fa fa-check"></i><b>3.1</b> Operadores binarios</a></li>
+<li class="chapter" data-level="3.2" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#asignacion-de-variables"><i class="fa fa-check"></i><b>3.2</b> Asignación de variables</a></li>
+<li class="chapter" data-level="3.3" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#vectors"><i class="fa fa-check"></i><b>3.3</b> Vectors</a></li>
+<li class="chapter" data-level="3.4" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#cohercion"><i class="fa fa-check"></i><b>3.4</b> Coherción</a></li>
+<li class="chapter" data-level="3.5" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#matrix-arrays"><i class="fa fa-check"></i><b>3.5</b> Matrix &amp; Arrays</a></li>
+<li class="chapter" data-level="3.6" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#lists"><i class="fa fa-check"></i><b>3.6</b> Lists</a></li>
+<li class="chapter" data-level="3.7" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#data.frame-data.table"><i class="fa fa-check"></i><b>3.7</b> data.frame, data.table</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="funciones.html"><a href="funciones.html"><i class="fa fa-check"></i><b>4</b> Funciones</a><ul>
+<li class="chapter" data-level="4.1" data-path="funciones.html"><a href="funciones.html#composicion-de-funciones"><i class="fa fa-check"></i><b>4.1</b> Composicion de funciones</a></li>
+<li class="chapter" data-level="4.2" data-path="funciones.html"><a href="funciones.html#vocabulario"><i class="fa fa-check"></i><b>4.2</b> Vocabulario</a></li>
+<li class="chapter" data-level="4.3" data-path="funciones.html"><a href="funciones.html#extractores"><i class="fa fa-check"></i><b>4.3</b> Extractores</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>5</b> Tidy Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data.html"><a href="tidy-data.html#necesidad-de-ordenar-la-informacion-antes-del-analisis"><i class="fa fa-check"></i><b>5.1</b> Necesidad de ordenar la información antes del análisis</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data.html"><a href="tidy-data.html#definiciones"><i class="fa fa-check"></i><b>5.1.1</b> Definiciones</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data.html"><a href="tidy-data.html#cuales-son-los-posibles-problemas-de-estos-datos"><i class="fa fa-check"></i><b>5.1.2</b> <strong>¿Cuáles son los posibles problemas de estos datos?</strong></a></li>
+<li class="chapter" data-level="5.1.3" data-path="tidy-data.html"><a href="tidy-data.html#ejercicio-identificar-el-data-set"><i class="fa fa-check"></i><b>5.1.3</b> Ejercicio: Identificar el data set</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data.html"><a href="tidy-data.html#formatos-wide-ancho-and-long-largo"><i class="fa fa-check"></i><b>5.2</b> Formatos Wide (ancho) and Long (largo)</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Curso Data Wrangling con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="funciones" class="section level1">
+<h1><span class="header-section-number">4</span> Funciones</h1>
+<p>Las funciones son el componente fundamental de la programación en R. En este
+curso no nos enfocarémos en como crear funciones, sino como usarlas.</p>
+<p>Una función es un bloque de código que ejecuta la lógica deseada. Para ello,
+hay que definir un flujo de información que realice las operaciones que
+deseemos llevar a cabo sobre los datos. Además, las funciones pueden tener
+inputs de información, los cuales son llamados argumentos. Por ejemplo:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb84-2" data-line-number="2">  <span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb84-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb84-4" data-line-number="4"><span class="kw">formals</span>(f)</a></code></pre></div>
+<pre><code>## $x</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1"><span class="kw">body</span>(f)</a></code></pre></div>
+<pre><code>## {
+##     print(x + 1)
+## }</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">f</a></code></pre></div>
+<pre><code>## function(x) {
+##   print(x + 1)
+## }</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1"><span class="kw">f</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Como se puede ver en el ejemplo de arriba, no basta con escribir el nombre de la
+función <code>f</code> para invocarla, sino que se tiene que colocar un par de paréntesis
+inmediatamente después de la función.</p>
+<p>Las funciones pueden tener argumentos obligados y argumentos opcionales, e.g.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">y =</span> <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb92-2" data-line-number="2">  <span class="kw">print</span>(x <span class="op">+</span><span class="st"> </span>y)</a>
+<a class="sourceLine" id="cb92-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb92-4" data-line-number="4"><span class="kw">f</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Finalmente, las funciones pueden recibir los argumentos de manera nombrada y de
+manera posicional.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" data-line-number="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(x, y, z) {</a>
+<a class="sourceLine" id="cb94-2" data-line-number="2">  x <span class="op">/</span><span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z</a>
+<a class="sourceLine" id="cb94-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb94-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb94-5" data-line-number="5"><span class="kw">f</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.1666667</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" data-line-number="1"><span class="kw">f</span>(<span class="dv">1</span>, <span class="dt">z =</span> <span class="dv">2</span>, <span class="dt">y =</span> <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.1666667</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" data-line-number="1"><span class="kw">f</span>(<span class="dt">z =</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dt">x =</span> <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 1.5</code></pre>
+<div id="composicion-de-funciones" class="section level2">
+<h2><span class="header-section-number">4.1</span> Composicion de funciones</h2>
+<p>La composición de funciones está definida de la siguiente manera:</p>
+<p><span class="math display">\[g \circ f = g(f(x))\]</span></p>
+<p>En R, la composición de funciones está provista por la librería <code>magrittr</code>. El
+operador <code>%&gt;%</code> es el operador de composición de funciones definido de la
+siguiente manera:</p>
+<p><span class="math display">\[f(x) %&gt;% g = g(f(x))\]</span></p>
+<p>Esto nos permite ejecutar funciones de manera continua sin perder facilidad de
+lectura en nuestro código, e.g.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb100-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb100-3" data-line-number="3"><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-4" data-line-number="4"><span class="st">  </span><span class="kw">add</span>(<span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-5" data-line-number="5"><span class="st">  </span><span class="kw">divide_by</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-6" data-line-number="6"><span class="st">  </span><span class="kw">multiply_by</span>(<span class="dv">10</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb100-7" data-line-number="7"><span class="st">  </span><span class="kw">subtract</span>(<span class="dv">100</span>)</a></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<p>En todas las secciones subsecuentes usaremos esta notación para nuestros
+ejemplos.</p>
+</div>
+<div id="vocabulario" class="section level2">
+<h2><span class="header-section-number">4.2</span> Vocabulario</h2>
+<p>En general, todas las funciones matetmáticas están definidas para vectores y
+matrices. A continuación listamos algunas de ellas:</p>
+<pre><code>sin, cos, tan, acos, asin, atan, atan2
+sum, prod, max, min, range, pmax, pmin
+cumsum, cumprod, cummax, cummin 
+abs, log, exp, sign
+floor, ceil, round, trunc, signif
+mean, median, cor, sd, var, 
+sample, seq, rep, rev</code></pre>
+<p>Adicional, tenemos el operador secuencia de enteros <code>:</code>.</p>
+</div>
+<div id="extractores" class="section level2">
+<h2><span class="header-section-number">4.3</span> Extractores</h2>
+<p>Sabemos que todo es una función en R. Y sabemos que las estructuras de datos
+fundamentales son los vectores y la listas. Entonces procedemos a explicar
+como usar funciones para extraer datos de las estructuras fundamentales.</p>
+<p>Para extraer datos de un vector ocupamos la función <code>[(x)</code> como en todos
+los demás lenguajes de programación, donde <code>x</code> es el índice del elemento que
+queremos extraer, iniciando en 1. Es común que desarrolladores de otros
+lenguajes de programación encuentren extraña esta notación, ya que generalmente
+un índice inicia en 0. <code>x</code> puede ser un vector de índices, en ese caso de
+devuelve un subvector con los elementos de las posiciones solicitadas:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb103-1" data-line-number="1">integer_vector &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="op">*</span><span class="st"> </span><span class="dv">100</span></a>
+<a class="sourceLine" id="cb103-2" data-line-number="2">integer_vector[<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] 100</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb105-1" data-line-number="1">integer_vector[<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>]</a></code></pre></div>
+<pre><code>## [1] 200 300 400 500</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb107-1" data-line-number="1">integer_vector[<span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">1</span>)]</a></code></pre></div>
+<pre><code>## [1] 300 500 600 800 100</code></pre>
+<p>Para extraer datos de una lista podemos ocupar la función <code>[</code>, la cual
+devolverá una lista con los elementos de las posiciones solicitadas, o bien,
+la función <code>[[</code> para extraer un elemento de la lista. Debido a la naturaleza de
+las listas, podemos ocupar múltiples funciones de extractor para obtener
+elementos anidados:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb109-1" data-line-number="1">example_list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb109-2" data-line-number="2">  <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb109-3" data-line-number="3">    <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb109-4" data-line-number="4">    <span class="kw">runif</span>(<span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb109-5" data-line-number="5">    <span class="kw">rnorm</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb109-6" data-line-number="6">  ),</a>
+<a class="sourceLine" id="cb109-7" data-line-number="7">  letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb109-8" data-line-number="8">)</a>
+<a class="sourceLine" id="cb109-9" data-line-number="9">example_list[<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [[1]]
+##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot;</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="kw">class</span>(example_list[<span class="dv">2</span>])</a></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb113-1" data-line-number="1">example_list[<span class="dv">2</span>][<span class="dv">5</span>]</a></code></pre></div>
+<pre><code>## [[1]]
+## NULL</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" data-line-number="1">example_list[[<span class="dv">1</span>]][[<span class="dv">2</span>]][<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] 0.6726164</code></pre>
+<p>En el caso de que un vector o una lista tengan nombres, podemos usar el
+nombre en la función <code>[</code> o en listas, usar directamente el extractor <code>$</code>:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">named_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;uno&quot;</span> =<span class="st"> </span><span class="dv">1</span>, <span class="st">&quot;dos&quot;</span> =<span class="st"> </span><span class="dv">2</span>, <span class="st">&quot;tres&quot;</span> =<span class="st"> </span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb117-2" data-line-number="2">named_vector[<span class="st">&quot;uno&quot;</span>]</a></code></pre></div>
+<pre><code>## uno 
+##   1</code></pre>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1">named_list &lt;-<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb119-2" data-line-number="2">  <span class="dt">numeric_vectors =</span> <span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb119-3" data-line-number="3">    <span class="dt">integer_vector =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span> ,<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">0</span>),</a>
+<a class="sourceLine" id="cb119-4" data-line-number="4">    <span class="dt">uniform_random =</span> <span class="kw">runif</span>(<span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb119-5" data-line-number="5">    <span class="dt">normal_random =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb119-6" data-line-number="6">  ),</a>
+<a class="sourceLine" id="cb119-7" data-line-number="7">  <span class="dt">character_vector =</span> letters[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb119-8" data-line-number="8">)</a>
+<a class="sourceLine" id="cb119-9" data-line-number="9">named_list[[<span class="st">&quot;numeric_vectors&quot;</span>]]<span class="op">$</span>integer_vector</a></code></pre></div>
+<pre><code>##  [1] 1 2 3 4 5 6 7 8 9 0</code></pre>
+<p>Para <code>matrix</code>, <code>array</code>, <code>data.frame</code> y <code>data.table</code>, la función <code>[</code> se comporta
+de manera diferente. Para empezar, puede recibir tantos argumentos como
+dimensiones tenga el array, en el caso de <code>data.frame</code> y <code>matrix</code>, recibe dos
+argumentos. El primero es la posición que queremos extraer en la primera
+dimensión (filas), el segundo es la posición que queremos extraer en la segunda
+dimensión (columnas). En caso de ser omitida una dimensión, se toma todos los
+valores posibles, e.g.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">iris[<span class="dv">1</span>, <span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] 5.1</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" data-line-number="1">iris[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</a></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" data-line-number="1">iris[<span class="dv">1</span>, ]</a></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">iris[, <span class="dv">1</span>]</a></code></pre></div>
+<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4
+##  [18] 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7 4.8 5.4 5.2 5.5
+##  [35] 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0
+##  [52] 6.4 6.9 5.5 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8
+##  [69] 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0 5.4
+##  [86] 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8
+## [103] 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7
+## [120] 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7
+## [137] 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" data-line-number="1">iris3[<span class="dv">1</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dv">3</span>]</a></code></pre></div>
+<pre><code>## Sepal L. Sepal W. Petal L. Petal W. 
+##      6.3      3.3      6.0      2.5</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" data-line-number="1">iris3[, , <span class="dv">1</span>] [<span class="dv">1</span>, ][<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## Sepal L. 
+##      5.1</code></pre>
+<p>Siendo el <code>data.frame</code> una lista nombrada, también podemos ocupar el operador
+<code>$</code>:</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1">iris<span class="op">$</span>Species</a></code></pre></div>
+<pre><code>##   [1] setosa     setosa     setosa     setosa     setosa     setosa    
+##   [7] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [13] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [19] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [25] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [31] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [37] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [43] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [49] setosa     setosa     versicolor versicolor versicolor versicolor
+##  [55] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [61] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [67] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [73] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [79] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [85] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [91] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [97] versicolor versicolor versicolor versicolor virginica  virginica 
+## [103] virginica  virginica  virginica  virginica  virginica  virginica 
+## [109] virginica  virginica  virginica  virginica  virginica  virginica 
+## [115] virginica  virginica  virginica  virginica  virginica  virginica 
+## [121] virginica  virginica  virginica  virginica  virginica  virginica 
+## [127] virginica  virginica  virginica  virginica  virginica  virginica 
+## [133] virginica  virginica  virginica  virginica  virginica  virginica 
+## [139] virginica  virginica  virginica  virginica  virginica  virginica 
+## [145] virginica  virginica  virginica  virginica  virginica  virginica 
+## Levels: setosa versicolor virginica</code></pre>
+<p>Finalmente, el operador <code>[</code> tiene una funcionalidad especial en <code>data.table</code>,
+cumpliendo con la mayoría de las operaciones que verémos a lo largo del curso.
+En este momento nos limitaremos únicamente a ver las diferencias con
+<code>data.frame</code>:</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb135-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb135-3" data-line-number="3">dtiris &lt;-<span class="st"> </span><span class="kw">as.data.table</span>(iris)</a>
+<a class="sourceLine" id="cb135-4" data-line-number="4"><span class="kw">class</span>(dtiris)</a></code></pre></div>
+<pre><code>## [1] &quot;data.table&quot; &quot;data.frame&quot;</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="co"># 1. El primer argumento del extractor en data.table siempre extrae filas</span></a>
+<a class="sourceLine" id="cb137-2" data-line-number="2">iris[<span class="dv">2</span>] <span class="op">%&gt;%</span><span class="st"> </span>head</a></code></pre></div>
+<pre><code>##   Sepal.Width
+## 1         3.5
+## 2         3.0
+## 3         3.2
+## 4         3.1
+## 5         3.6
+## 6         3.9</code></pre>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">dtiris[<span class="dv">1</span>]</a></code></pre></div>
+<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1:          5.1         3.5          1.4         0.2  setosa</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="co"># 2. Cuando el segundo argumento es un nombre, no se requieren comillas</span></a>
+<a class="sourceLine" id="cb141-2" data-line-number="2">iris[, <span class="st">&quot;Species&quot;</span>]</a></code></pre></div>
+<pre><code>##   [1] setosa     setosa     setosa     setosa     setosa     setosa    
+##   [7] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [13] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [19] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [25] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [31] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [37] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [43] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [49] setosa     setosa     versicolor versicolor versicolor versicolor
+##  [55] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [61] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [67] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [73] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [79] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [85] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [91] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [97] versicolor versicolor versicolor versicolor virginica  virginica 
+## [103] virginica  virginica  virginica  virginica  virginica  virginica 
+## [109] virginica  virginica  virginica  virginica  virginica  virginica 
+## [115] virginica  virginica  virginica  virginica  virginica  virginica 
+## [121] virginica  virginica  virginica  virginica  virginica  virginica 
+## [127] virginica  virginica  virginica  virginica  virginica  virginica 
+## [133] virginica  virginica  virginica  virginica  virginica  virginica 
+## [139] virginica  virginica  virginica  virginica  virginica  virginica 
+## [145] virginica  virginica  virginica  virginica  virginica  virginica 
+## Levels: setosa versicolor virginica</code></pre>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1">dtiris[, Species]</a></code></pre></div>
+<pre><code>##   [1] setosa     setosa     setosa     setosa     setosa     setosa    
+##   [7] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [13] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [19] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [25] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [31] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [37] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [43] setosa     setosa     setosa     setosa     setosa     setosa    
+##  [49] setosa     setosa     versicolor versicolor versicolor versicolor
+##  [55] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [61] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [67] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [73] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [79] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [85] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [91] versicolor versicolor versicolor versicolor versicolor versicolor
+##  [97] versicolor versicolor versicolor versicolor virginica  virginica 
+## [103] virginica  virginica  virginica  virginica  virginica  virginica 
+## [109] virginica  virginica  virginica  virginica  virginica  virginica 
+## [115] virginica  virginica  virginica  virginica  virginica  virginica 
+## [121] virginica  virginica  virginica  virginica  virginica  virginica 
+## [127] virginica  virginica  virginica  virginica  virginica  virginica 
+## [133] virginica  virginica  virginica  virginica  virginica  virginica 
+## [139] virginica  virginica  virginica  virginica  virginica  virginica 
+## [145] virginica  virginica  virginica  virginica  virginica  virginica 
+## Levels: setosa versicolor virginica</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="co"># 3. Cuando el segundo argumento es un conjunto de columnas, se puede pasar una</span></a>
+<a class="sourceLine" id="cb145-2" data-line-number="2"><span class="co"># lista de expresiones sin comillas</span></a>
+<a class="sourceLine" id="cb145-3" data-line-number="3">iris[, <span class="kw">c</span>(<span class="st">&quot;Sepal.Length&quot;</span>, <span class="st">&quot;Sepal.Width&quot;</span>)] <span class="op">%&gt;%</span><span class="st"> </span>head</a></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width
+## 1          5.1         3.5
+## 2          4.9         3.0
+## 3          4.7         3.2
+## 4          4.6         3.1
+## 5          5.0         3.6
+## 6          5.4         3.9</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1">dtiris[, <span class="kw">list</span>(Sepal.Length, Sepal.Width)] <span class="op">%&gt;%</span><span class="st"> </span>head</a></code></pre></div>
+<pre><code>##    Sepal.Length Sepal.Width
+## 1:          5.1         3.5
+## 2:          4.9         3.0
+## 3:          4.7         3.2
+## 4:          4.6         3.1
+## 5:          5.0         3.6
+## 6:          5.4         3.9</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1"><span class="co"># 4. En un contexto de data.table, el . significa lista</span></a>
+<a class="sourceLine" id="cb149-2" data-line-number="2">dtiris[, .(Sepal.Length, Sepal.Width)] <span class="op">%&gt;%</span><span class="st"> </span>head</a></code></pre></div>
+<pre><code>##    Sepal.Length Sepal.Width
+## 1:          5.1         3.5
+## 2:          4.9         3.0
+## 3:          4.7         3.2
+## 4:          4.6         3.1
+## 5:          5.0         3.6
+## 6:          5.4         3.9</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estructuras-de-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidy-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

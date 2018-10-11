@@ -32,7 +32,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="requisitos-y-temario.html">
+<link rel="prev" href="funciones.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 </head>
 
@@ -62,17 +99,46 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objetivo, Requisitos y Temario Data Wrangling en R</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo-y-descripcion-del-curso"><i class="fa fa-check"></i><b>1.1</b> Objetivo y Descripción del curso</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Objetivo y Requisitos</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i><b>1.1</b> Objetivo</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.2</b> Requisitos</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i><b>1.3</b> Temario</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="requisitos-y-temario.html"><a href="requisitos-y-temario.html"><i class="fa fa-check"></i><b>2</b> Requisitos y Temario</a><ul>
-<li class="chapter" data-level="2.1" data-path="requisitos-y-temario.html"><a href="requisitos-y-temario.html#requisitos"><i class="fa fa-check"></i><b>2.1</b> Requisitos</a></li>
-<li class="chapter" data-level="2.2" data-path="requisitos-y-temario.html"><a href="requisitos-y-temario.html#temario"><i class="fa fa-check"></i><b>2.2</b> Temario</a></li>
+<li class="chapter" data-level="2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html"><i class="fa fa-check"></i><b>2</b> R y RStudio</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#que-es-r"><i class="fa fa-check"></i><b>2.0.1</b> ¿Qué es R?</a></li>
+<li class="chapter" data-level="2.0.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#por-que-y-cuando-usar-r"><i class="fa fa-check"></i><b>2.0.2</b> ¿Por qué y cuando usar R?</a></li>
+<li class="chapter" data-level="2.0.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#benchmark"><i class="fa fa-check"></i><b>2.0.3</b> Benchmark</a></li>
+<li class="chapter" data-level="2.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion"><i class="fa fa-check"></i><b>2.1</b> Instalación</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-del-interprete"><i class="fa fa-check"></i><b>2.1.1</b> Instalación del interprete</a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-de-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Instalación de RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#instalacion-de-paquetes"><i class="fa fa-check"></i><b>2.1.3</b> Instalación de paquetes</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy Data</a><ul>
-<li class="chapter" data-level="3.1" data-path="tidy-data.html"><a href="tidy-data.html#necesidad-de-ordenar-la-informacion-antes-del-analisis"><i class="fa fa-check"></i><b>3.1</b> Necesidad de ordenar la información antes del análisis</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="tidy-data.html"><a href="tidy-data.html#definiciones"><i class="fa fa-check"></i><b>3.1.1</b> Definiciones</a></li>
-<li class="chapter" data-level="3.1.2" data-path="tidy-data.html"><a href="tidy-data.html#cuales-son-los-posibles-problemas-de-estos-datos"><i class="fa fa-check"></i><b>3.1.2</b> <strong>¿Cuáles son los posibles problemas de estos datos?</strong></a></li>
+<li class="chapter" data-level="2.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#tour-por-rstudio"><i class="fa fa-check"></i><b>2.2</b> Tour por RStudio</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#panel-del-cli"><i class="fa fa-check"></i><b>2.2.1</b> Panel del CLI</a></li>
+<li class="chapter" data-level="2.2.2" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#panel-de-script"><i class="fa fa-check"></i><b>2.2.2</b> Panel de script</a></li>
+<li class="chapter" data-level="2.2.3" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#environment"><i class="fa fa-check"></i><b>2.2.3</b> Environment</a></li>
+<li class="chapter" data-level="2.2.4" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#paneles-miscelaneos"><i class="fa fa-check"></i><b>2.2.4</b> Paneles miscelaneos</a></li>
+<li class="chapter" data-level="2.2.5" data-path="r-y-rstudio.html"><a href="r-y-rstudio.html#sistema-de-ayuda"><i class="fa fa-check"></i><b>2.2.5</b> Sistema de ayuda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html"><i class="fa fa-check"></i><b>3</b> Estructuras de datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#operadores-binarios"><i class="fa fa-check"></i><b>3.1</b> Operadores binarios</a></li>
+<li class="chapter" data-level="3.2" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#asignacion-de-variables"><i class="fa fa-check"></i><b>3.2</b> Asignación de variables</a></li>
+<li class="chapter" data-level="3.3" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#vectors"><i class="fa fa-check"></i><b>3.3</b> Vectors</a></li>
+<li class="chapter" data-level="3.4" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#cohercion"><i class="fa fa-check"></i><b>3.4</b> Coherción</a></li>
+<li class="chapter" data-level="3.5" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#matrix-arrays"><i class="fa fa-check"></i><b>3.5</b> Matrix &amp; Arrays</a></li>
+<li class="chapter" data-level="3.6" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#lists"><i class="fa fa-check"></i><b>3.6</b> Lists</a></li>
+<li class="chapter" data-level="3.7" data-path="estructuras-de-datos.html"><a href="estructuras-de-datos.html#data.frame-data.table"><i class="fa fa-check"></i><b>3.7</b> data.frame, data.table</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="funciones.html"><a href="funciones.html"><i class="fa fa-check"></i><b>4</b> Funciones</a></li>
+<li class="chapter" data-level="5" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>5</b> Tidy Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data.html"><a href="tidy-data.html#necesidad-de-ordenar-la-informacion-antes-del-analisis"><i class="fa fa-check"></i><b>5.1</b> Necesidad de ordenar la información antes del análisis</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data.html"><a href="tidy-data.html#definiciones"><i class="fa fa-check"></i><b>5.1.1</b> Definiciones</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data.html"><a href="tidy-data.html#cuales-son-los-posibles-problemas-de-estos-datos"><i class="fa fa-check"></i><b>5.1.2</b> <strong>¿Cuáles son los posibles problemas de estos datos?</strong></a></li>
+<li class="chapter" data-level="5.1.3" data-path="tidy-data.html"><a href="tidy-data.html#ejercicio-identificar-el-data-set"><i class="fa fa-check"></i><b>5.1.3</b> Ejercicio: Identificar el data set</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data.html"><a href="tidy-data.html#formatos-wide-ancho-and-long-largo"><i class="fa fa-check"></i><b>5.2</b> Formatos Wide (ancho) and Long (largo)</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="tidy-data.html"><a href="tidy-data.html#funciones-melt-y-dcast"><i class="fa fa-check"></i><b>5.2.1</b> Funciones <code>melt()</code> y <code>dcast()</code></a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -93,22 +159,22 @@
 
             <section class="normal" id="section-">
 <div id="tidy-data" class="section level1">
-<h1><span class="header-section-number">3</span> Tidy Data</h1>
+<h1><span class="header-section-number">5</span> Tidy Data</h1>
 <blockquote>
 <p>“Todos los <strong><em>tidy datasets</em></strong> se parecen unos a otros, pero todos los <strong><em>untidy datasets</em></strong> lo son a su manera.”</p>
 <p>— Hadley Wickham</p>
 </blockquote>
 <div id="necesidad-de-ordenar-la-informacion-antes-del-analisis" class="section level2">
-<h2><span class="header-section-number">3.1</span> Necesidad de ordenar la información antes del análisis</h2>
+<h2><span class="header-section-number">5.1</span> Necesidad de ordenar la información antes del análisis</h2>
 <p>Los que han trabajado analizando datos recordarán que una de las grandes dificultades es la <em>limpieza</em> de los mismos. Sin embargo otra práctica escencial que no se debe olvidar antes de poder realizar cualquier tipo de cálculo o análisis es su <em>ordenamiento</em>.</p>
 <p>Esta sección se dedicará a explicar la filosofía del <strong>tidy data</strong>, la cual consiste en exponer una forma de ordenar los datos a través de reorganizar los distintos datos que se puedan encontrar en el día a día.</p>
 <p>Primero introduciremos algunos terminos para poder ejemplificar mejor algunos de los problemas más comunes en la organización de los datos.</p>
 <div id="definiciones" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> Definiciones</h3>
+<h3><span class="header-section-number">5.1.1</span> Definiciones</h3>
 <ul>
-<li><strong>Dataset:</strong> Collección de <em>valores</em>, los cuales pertenecen a una <em>observación</em> y a una <em>variable</em>. Normalmente se encuentran registrados de manera tabular con filas y <em>columnas</em>.</li>
+<li><strong>Dataset:</strong> Colección de <em>valores</em>, los cuales pertenecen a una <em>observación</em> y a una <em>variable</em>. Normalmente se encuentran registrados de manera tabular con filas y <em>columnas</em>.</li>
 <li><strong>Variable:</strong> Contiene todos los valores que miden la misma característica de las <em>“unidades de medición”</em>, i.e. peso, altura, temperatura, etc…</li>
-<li><strong>Obsetvación:</strong> Contiene todos los valores medidos de una <em>“unidad de medición”</em> a través de las diferentes variables.</li>
+<li><strong>Observación:</strong> Contiene todos los valores medidos de una <em>“unidad de medición”</em> a través de las diferentes variables.</li>
 <li><strong>Tidy dataset:</strong> Llamaremos <em>tidy</em> u <em>ordenado</em> a un dataset que cumpla con los siguientes tres principios en su estructura:
 <ul>
 <li>Cada <em>variable</em> es una columna.</li>
@@ -118,17 +184,16 @@
 </ul>
 </div>
 <div id="cuales-son-los-posibles-problemas-de-estos-datos" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> <strong>¿Cuáles son los posibles problemas de estos datos?</strong></h3>
+<h3><span class="header-section-number">5.1.2</span> <strong>¿Cuáles son los posibles problemas de estos datos?</strong></h3>
 <p>Algunas de las causas para que estos datos no cuenten con el formato adecuado:</p>
 <ul>
 <li>Los encabezados de las columnas son variables.</li>
 <li>Múltiples variables son guardadas en una sola columna.</li>
 <li>Las variables son guardadas en renglones y no en columnas.</li>
-<li>Multiples variables guardadas en una sola columna.</li>
 </ul>
 <p>A continuación se presentan algunos ejemplos de tablas <strong>“desorganizados”</strong>.</p>
 <table>
-<caption><span id="tab:untidy-table-1">Table 3.1: </span>Información Médica</caption>
+<caption><span id="tab:untidy-medical-table">Table 5.1: </span>Información Médica</caption>
 <thead>
 <tr class="header">
 <th align="left">persona</th>
@@ -154,11 +219,13 @@
 </tr>
 </tbody>
 </table>
-<p>La tabla <a href="tidy-data.html#tab:untidy-table-1">3.1</a> muestra datos de tres individuos, con respecto a dos tratamientos médicos. Se puede apreciar como las dos columnas de la tabla se muestran etiquetas de variables.</p>
+<p>La tabla <a href="tidy-data.html#tab:untidy-medical-table">5.1</a> muestra datos de tres individuos, con respecto a dos tratamientos médicos.</p>
+<p>Se puede apreciar como las dos columnas de la tabla se muestran etiquetas de variables.</p>
 <table>
-<caption><span id="tab:untidy-table-2">Table 3.2: </span>Información del clima</caption>
+<caption><span id="tab:untidy-weather-table">Table 5.2: </span>Información del clima</caption>
 <thead>
 <tr class="header">
+<th align="right">X</th>
 <th align="left">id</th>
 <th align="right">year</th>
 <th align="right">month</th>
@@ -168,11 +235,11 @@
 <th align="right">d3</th>
 <th align="right">d4</th>
 <th align="right">d5</th>
-<th align="right">d6</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="right">1</td>
 <td align="left">MX000017004</td>
 <td align="right">2010</td>
 <td align="right">1</td>
@@ -182,9 +249,9 @@
 <td align="right">NA</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
-<td align="right">NA</td>
 </tr>
 <tr class="even">
+<td align="right">2</td>
 <td align="left">MX000017004</td>
 <td align="right">2010</td>
 <td align="right">1</td>
@@ -194,9 +261,9 @@
 <td align="right">NA</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
-<td align="right">NA</td>
 </tr>
 <tr class="odd">
+<td align="right">3</td>
 <td align="left">MX000017004</td>
 <td align="right">2010</td>
 <td align="right">2</td>
@@ -206,9 +273,9 @@
 <td align="right">241</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
-<td align="right">NA</td>
 </tr>
 <tr class="even">
+<td align="right">4</td>
 <td align="left">MX000017004</td>
 <td align="right">2010</td>
 <td align="right">2</td>
@@ -218,9 +285,9 @@
 <td align="right">144</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
-<td align="right">NA</td>
 </tr>
 <tr class="odd">
+<td align="right">5</td>
 <td align="left">MX000017004</td>
 <td align="right">2010</td>
 <td align="right">3</td>
@@ -230,9 +297,9 @@
 <td align="right">NA</td>
 <td align="right">NA</td>
 <td align="right">321</td>
-<td align="right">NA</td>
 </tr>
 <tr class="even">
+<td align="right">6</td>
 <td align="left">MX000017004</td>
 <td align="right">2010</td>
 <td align="right">3</td>
@@ -242,14 +309,16 @@
 <td align="right">NA</td>
 <td align="right">NA</td>
 <td align="right">142</td>
-<td align="right">NA</td>
 </tr>
 </tbody>
 </table>
 <p>Este conjunto de datos representa la información meteorológica, temperatura mínima y máxima de los primeros tres meses del 2010.</p>
-<p>En <a href="tidy-data.html#tab:untidy-table-2">3.2</a> se presentan columnas con dos indicadores de variables, así mismo un ordenamiento para los días de cada mes hacia la derecha que hace dificil elaborar cálculos para el análisis.</p>
+<p>En <a href="tidy-data.html#tab:untidy-weather-table">5.2</a> se presenta la columna <em>element</em> con dos indicadores de variables, la temperatura máxima y la mínima así mismo un ordenamiento para los días de cada mes hacia la derecha que hace dificil elaborar cálculos para el análisis.</p>
+</div>
+<div id="ejercicio-identificar-el-data-set" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Ejercicio: Identificar el data set</h3>
 <table>
-<caption><span id="tab:untidy-table-3">Table 3.3: </span>INPC base Julio 2018</caption>
+<caption><span id="tab:untidy-inpc-table">Table 5.3: </span>INPC base Julio 2018</caption>
 <thead>
 <tr class="header">
 <th align="left">mes</th>
@@ -359,7 +428,912 @@
 </tr>
 </tbody>
 </table>
+<p>Finalmente en la tabla <a href="tidy-data.html#tab:untidy-inpc-table">5.3</a> se muestra la revalorización del INPC hecha por el INEGI el pasado mes de agosto.</p>
+<ul>
+<li>¿Qué podríamos decir de este conjunto de datos?</li>
+<li>Si quisieramos obtener el crecimiento porcentual entre cada periodo, ¿es conveniente el formato que tiene actualmente?</li>
+<li>¿Qué modificaciones le deberíamos hacer a la estructura de la tabla para que sea un conjunto de datos <em>tidy</em>?</li>
+</ul>
+</div>
+</div>
+<div id="formatos-wide-ancho-and-long-largo" class="section level2">
+<h2><span class="header-section-number">5.2</span> Formatos Wide (ancho) and Long (largo)</h2>
+<p>Como su nombre lo indica, los datos que se encuentran en un formato <em>Ancho</em> son aquellos que contienen información para una misma medida en diferentes columnas. El nombre de las columnas indica la variabla de la cual se está recolectando la información. Un claro ejemplo de datos anchos es la tabla <a href="tidy-data.html#tab:untidy-inpc-table">5.3</a></p>
+<p>En cambio los datos en formato <em>Largo</em> son aquellos que utilizan columnas independientes para guardar las variables de cada observación. Se presenta la siguiente tabla como un ejemplo de cómo se ve la transformación de una tabla <em>Ancha</em> a un formato <em>Largo</em>.</p>
+<table>
+<caption><span id="tab:tidy-inpc-table">Table 5.4: </span>INPC base Julio 2018 formato largo</caption>
+<thead>
+<tr class="header">
+<th align="left">TIME_PERIOD</th>
+<th align="right">OBS_VALUE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2014-01-01</td>
+<td align="right">84.51905</td>
+</tr>
+<tr class="even">
+<td align="left">2014-02-01</td>
+<td align="right">84.73316</td>
+</tr>
+<tr class="odd">
+<td align="left">2014-03-01</td>
+<td align="right">84.96529</td>
+</tr>
+<tr class="even">
+<td align="left">2014-04-01</td>
+<td align="right">84.80678</td>
+</tr>
+<tr class="odd">
+<td align="left">2014-05-01</td>
+<td align="right">84.53558</td>
+</tr>
+<tr class="even">
+<td align="left">2014-06-01</td>
+<td align="right">84.68207</td>
+</tr>
+<tr class="odd">
+<td align="left">2014-07-01</td>
+<td align="right">84.91496</td>
+</tr>
+<tr class="even">
+<td align="left">2014-08-01</td>
+<td align="right">85.21997</td>
+</tr>
+<tr class="odd">
+<td align="left">2014-09-01</td>
+<td align="right">85.59634</td>
+</tr>
+<tr class="even">
+<td align="left">2014-10-01</td>
+<td align="right">86.06963</td>
+</tr>
+<tr class="odd">
+<td align="left">2014-11-01</td>
+<td align="right">86.76378</td>
+</tr>
+<tr class="even">
+<td align="left">2014-12-01</td>
+<td align="right">87.18898</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-01-01</td>
+<td align="right">87.11010</td>
+</tr>
+<tr class="even">
+<td align="left">2015-02-01</td>
+<td align="right">87.27538</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-03-01</td>
+<td align="right">87.63072</td>
+</tr>
+<tr class="even">
+<td align="left">2015-04-01</td>
+<td align="right">87.40384</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-05-01</td>
+<td align="right">86.96737</td>
+</tr>
+<tr class="even">
+<td align="left">2015-06-01</td>
+<td align="right">87.11311</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-07-01</td>
+<td align="right">87.24082</td>
+</tr>
+<tr class="even">
+<td align="left">2015-08-01</td>
+<td align="right">87.42488</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-09-01</td>
+<td align="right">87.75242</td>
+</tr>
+<tr class="even">
+<td align="left">2015-10-01</td>
+<td align="right">88.20392</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-11-01</td>
+<td align="right">88.68547</td>
+</tr>
+<tr class="even">
+<td align="left">2015-12-01</td>
+<td align="right">89.04682</td>
+</tr>
+<tr class="odd">
+<td align="left">2016-01-01</td>
+<td align="right">89.38638</td>
+</tr>
+<tr class="even">
+<td align="left">2016-02-01</td>
+<td align="right">89.77778</td>
+</tr>
+<tr class="odd">
+<td align="left">2016-03-01</td>
+<td align="right">89.91000</td>
+</tr>
+<tr class="even">
+<td align="left">2016-04-01</td>
+<td align="right">89.62528</td>
+</tr>
+<tr class="odd">
+<td align="left">2016-05-01</td>
+<td align="right">89.22561</td>
+</tr>
+<tr class="even">
+<td align="left">2016-06-01</td>
+<td align="right">89.32403</td>
+</tr>
+<tr class="odd">
+<td align="left">2016-07-01</td>
+<td align="right">89.55691</td>
+</tr>
+<tr class="even">
+<td align="left">2016-08-01</td>
+<td align="right">89.80933</td>
+</tr>
+<tr class="odd">
+<td align="left">2016-09-01</td>
+<td align="right">90.35774</td>
+</tr>
+<tr class="even">
+<td align="left">2016-10-01</td>
+<td align="right">90.90615</td>
+</tr>
+<tr class="odd">
+<td align="left">2016-11-01</td>
+<td align="right">91.61683</td>
+</tr>
+<tr class="even">
+<td align="left">2016-12-01</td>
+<td align="right">92.03903</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-01-01</td>
+<td align="right">93.60388</td>
+</tr>
+<tr class="even">
+<td align="left">2017-02-01</td>
+<td align="right">94.14478</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-03-01</td>
+<td align="right">94.72249</td>
+</tr>
+<tr class="even">
+<td align="left">2017-04-01</td>
+<td align="right">94.83893</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-05-01</td>
+<td align="right">94.72549</td>
+</tr>
+<tr class="even">
+<td align="left">2017-06-01</td>
+<td align="right">94.96364</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-07-01</td>
+<td align="right">95.32274</td>
+</tr>
+<tr class="even">
+<td align="left">2017-08-01</td>
+<td align="right">95.79377</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-09-01</td>
+<td align="right">96.09352</td>
+</tr>
+<tr class="even">
+<td align="left">2017-10-01</td>
+<td align="right">96.69827</td>
+</tr>
+<tr class="odd">
+<td align="left">2017-11-01</td>
+<td align="right">97.69517</td>
+</tr>
+<tr class="even">
+<td align="left">2017-12-01</td>
+<td align="right">98.27288</td>
+</tr>
+<tr class="odd">
+<td align="left">2018-01-01</td>
+<td align="right">98.79500</td>
+</tr>
+<tr class="even">
+<td align="left">2018-02-01</td>
+<td align="right">99.17137</td>
+</tr>
+<tr class="odd">
+<td align="left">2018-03-01</td>
+<td align="right">99.49216</td>
+</tr>
+<tr class="even">
+<td align="left">2018-04-01</td>
+<td align="right">99.15485</td>
+</tr>
+<tr class="odd">
+<td align="left">2018-05-01</td>
+<td align="right">98.99408</td>
+</tr>
+<tr class="even">
+<td align="left">2018-06-01</td>
+<td align="right">99.37646</td>
+</tr>
+<tr class="odd">
+<td align="left">2018-07-01</td>
+<td align="right">99.90910</td>
+</tr>
+<tr class="even">
+<td align="left">2018-08-01</td>
+<td align="right">100.49200</td>
+</tr>
+</tbody>
+</table>
+<p>Existen dos operaciones fundamentales para transformar la estructura de la tabla <code>melt()</code> y <code>dcast()</code>.</p>
+<ul>
+<li><code>melt()</code>: Sirve para agrupar las variables que se encuentran como varias columnas en una sola. El nombre de las columnas se convierte en una etiqueta que transforma <em>wide data</em> a <em>long data</em>.</li>
+<li><code>cast()</code>: Convierte en encabezados las etiquetas que se encuentren en una columna y rellena dichas columnas con los valores indicados. Se utiliza para convertir <em>long data</em> a <em>wide data</em>.</li>
+</ul>
+<div class="figure"><span id="fig:melt-cast-graph"></span>
+<img src="assets/melt_cast.png" alt="Cambio de wide a long data"  />
+<p class="caption">
+Figure 5.1: Cambio de wide a long data
+</p>
+</div>
+<p>Estas operaciones pueden presentarse como funciones con otros nombres, dependiendo de la paquetería que utilicen:</p>
+<ul>
+<li>Con <code>dplyr</code> las funciones son <code>gather()</code> y <code>spread()</code>.</li>
+<li>En <code>data.table</code> utilizaremos <code>melt.data.table()</code> y <code>dcast.data.table()</code></li>
+<li>Para <code>reshape2</code> son <code>melt()</code> y <code>dcast()</code>.</li>
+</ul>
+<p>Éstas últimas serán las que utilizaremos para los ejemplos de este capítulo.</p>
+<div id="funciones-melt-y-dcast" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Funciones <code>melt()</code> y <code>dcast()</code></h3>
+<p>Son parte del paquete <code>reshape2</code> creado por <a href="HW">Hadley Wickham</a> y se utilizan de la siguiente forma:</p>
+<div id="melt" class="section level4">
+<h4><span class="header-section-number">5.2.1.1</span> <code>melt()</code></h4>
+<p>Cuenta con los siguientes parámetros <code>data</code>, <code>id.vars</code>, <code>variable.name</code>,<code>value.name</code>.</p>
+<pre><code>## starting httpd help server ... done</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">air_quality &lt;-<span class="st"> </span>airquality
 
+<span class="kw">head</span>(air_quality, <span class="dv">10</span>)</code></pre></div>
+<pre><code>##    Ozone Solar.R Wind Temp Month Day
+## 1     41     190  7.4   67     5   1
+## 2     36     118  8.0   72     5   2
+## 3     12     149 12.6   74     5   3
+## 4     18     313 11.5   62     5   4
+## 5     NA      NA 14.3   56     5   5
+## 6     28      NA 14.9   66     5   6
+## 7     23     299  8.6   65     5   7
+## 8     19      99 13.8   59     5   8
+## 9      8      19 20.1   61     5   9
+## 10    NA     194  8.6   69     5  10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">reshape2<span class="op">::</span><span class="kw">melt</span>(<span class="dt">data =</span> air_quality, <span class="dt">id.vars =</span> <span class="kw">c</span>(<span class="st">&quot;Month&quot;</span>, <span class="st">&quot;Day&quot;</span>), <span class="dt">variable.name =</span> <span class="st">&quot;meterogical_measurement&quot;</span>, <span class="dt">value.name =</span> <span class="st">&quot;values&quot;</span>)</code></pre></div>
+<pre><code>##     Month Day meterogical_measurement values
+## 1       5   1                   Ozone   41.0
+## 2       5   2                   Ozone   36.0
+## 3       5   3                   Ozone   12.0
+## 4       5   4                   Ozone   18.0
+## 5       5   5                   Ozone     NA
+## 6       5   6                   Ozone   28.0
+## 7       5   7                   Ozone   23.0
+## 8       5   8                   Ozone   19.0
+## 9       5   9                   Ozone    8.0
+## 10      5  10                   Ozone     NA
+## 11      5  11                   Ozone    7.0
+## 12      5  12                   Ozone   16.0
+## 13      5  13                   Ozone   11.0
+## 14      5  14                   Ozone   14.0
+## 15      5  15                   Ozone   18.0
+## 16      5  16                   Ozone   14.0
+## 17      5  17                   Ozone   34.0
+## 18      5  18                   Ozone    6.0
+## 19      5  19                   Ozone   30.0
+## 20      5  20                   Ozone   11.0
+## 21      5  21                   Ozone    1.0
+## 22      5  22                   Ozone   11.0
+## 23      5  23                   Ozone    4.0
+## 24      5  24                   Ozone   32.0
+## 25      5  25                   Ozone     NA
+## 26      5  26                   Ozone     NA
+## 27      5  27                   Ozone     NA
+## 28      5  28                   Ozone   23.0
+## 29      5  29                   Ozone   45.0
+## 30      5  30                   Ozone  115.0
+## 31      5  31                   Ozone   37.0
+## 32      6   1                   Ozone     NA
+## 33      6   2                   Ozone     NA
+## 34      6   3                   Ozone     NA
+## 35      6   4                   Ozone     NA
+## 36      6   5                   Ozone     NA
+## 37      6   6                   Ozone     NA
+## 38      6   7                   Ozone   29.0
+## 39      6   8                   Ozone     NA
+## 40      6   9                   Ozone   71.0
+## 41      6  10                   Ozone   39.0
+## 42      6  11                   Ozone     NA
+## 43      6  12                   Ozone     NA
+## 44      6  13                   Ozone   23.0
+## 45      6  14                   Ozone     NA
+## 46      6  15                   Ozone     NA
+## 47      6  16                   Ozone   21.0
+## 48      6  17                   Ozone   37.0
+## 49      6  18                   Ozone   20.0
+## 50      6  19                   Ozone   12.0
+## 51      6  20                   Ozone   13.0
+## 52      6  21                   Ozone     NA
+## 53      6  22                   Ozone     NA
+## 54      6  23                   Ozone     NA
+## 55      6  24                   Ozone     NA
+## 56      6  25                   Ozone     NA
+## 57      6  26                   Ozone     NA
+## 58      6  27                   Ozone     NA
+## 59      6  28                   Ozone     NA
+## 60      6  29                   Ozone     NA
+## 61      6  30                   Ozone     NA
+## 62      7   1                   Ozone  135.0
+## 63      7   2                   Ozone   49.0
+## 64      7   3                   Ozone   32.0
+## 65      7   4                   Ozone     NA
+## 66      7   5                   Ozone   64.0
+## 67      7   6                   Ozone   40.0
+## 68      7   7                   Ozone   77.0
+## 69      7   8                   Ozone   97.0
+## 70      7   9                   Ozone   97.0
+## 71      7  10                   Ozone   85.0
+## 72      7  11                   Ozone     NA
+## 73      7  12                   Ozone   10.0
+## 74      7  13                   Ozone   27.0
+## 75      7  14                   Ozone     NA
+## 76      7  15                   Ozone    7.0
+## 77      7  16                   Ozone   48.0
+## 78      7  17                   Ozone   35.0
+## 79      7  18                   Ozone   61.0
+## 80      7  19                   Ozone   79.0
+## 81      7  20                   Ozone   63.0
+## 82      7  21                   Ozone   16.0
+## 83      7  22                   Ozone     NA
+## 84      7  23                   Ozone     NA
+## 85      7  24                   Ozone   80.0
+## 86      7  25                   Ozone  108.0
+## 87      7  26                   Ozone   20.0
+## 88      7  27                   Ozone   52.0
+## 89      7  28                   Ozone   82.0
+## 90      7  29                   Ozone   50.0
+## 91      7  30                   Ozone   64.0
+## 92      7  31                   Ozone   59.0
+## 93      8   1                   Ozone   39.0
+## 94      8   2                   Ozone    9.0
+## 95      8   3                   Ozone   16.0
+## 96      8   4                   Ozone   78.0
+## 97      8   5                   Ozone   35.0
+## 98      8   6                   Ozone   66.0
+## 99      8   7                   Ozone  122.0
+## 100     8   8                   Ozone   89.0
+## 101     8   9                   Ozone  110.0
+## 102     8  10                   Ozone     NA
+## 103     8  11                   Ozone     NA
+## 104     8  12                   Ozone   44.0
+## 105     8  13                   Ozone   28.0
+## 106     8  14                   Ozone   65.0
+## 107     8  15                   Ozone     NA
+## 108     8  16                   Ozone   22.0
+## 109     8  17                   Ozone   59.0
+## 110     8  18                   Ozone   23.0
+## 111     8  19                   Ozone   31.0
+## 112     8  20                   Ozone   44.0
+## 113     8  21                   Ozone   21.0
+## 114     8  22                   Ozone    9.0
+## 115     8  23                   Ozone     NA
+## 116     8  24                   Ozone   45.0
+## 117     8  25                   Ozone  168.0
+## 118     8  26                   Ozone   73.0
+## 119     8  27                   Ozone     NA
+## 120     8  28                   Ozone   76.0
+## 121     8  29                   Ozone  118.0
+## 122     8  30                   Ozone   84.0
+## 123     8  31                   Ozone   85.0
+## 124     9   1                   Ozone   96.0
+## 125     9   2                   Ozone   78.0
+## 126     9   3                   Ozone   73.0
+## 127     9   4                   Ozone   91.0
+## 128     9   5                   Ozone   47.0
+## 129     9   6                   Ozone   32.0
+## 130     9   7                   Ozone   20.0
+## 131     9   8                   Ozone   23.0
+## 132     9   9                   Ozone   21.0
+## 133     9  10                   Ozone   24.0
+## 134     9  11                   Ozone   44.0
+## 135     9  12                   Ozone   21.0
+## 136     9  13                   Ozone   28.0
+## 137     9  14                   Ozone    9.0
+## 138     9  15                   Ozone   13.0
+## 139     9  16                   Ozone   46.0
+## 140     9  17                   Ozone   18.0
+## 141     9  18                   Ozone   13.0
+## 142     9  19                   Ozone   24.0
+## 143     9  20                   Ozone   16.0
+## 144     9  21                   Ozone   13.0
+## 145     9  22                   Ozone   23.0
+## 146     9  23                   Ozone   36.0
+## 147     9  24                   Ozone    7.0
+## 148     9  25                   Ozone   14.0
+## 149     9  26                   Ozone   30.0
+## 150     9  27                   Ozone     NA
+## 151     9  28                   Ozone   14.0
+## 152     9  29                   Ozone   18.0
+## 153     9  30                   Ozone   20.0
+## 154     5   1                 Solar.R  190.0
+## 155     5   2                 Solar.R  118.0
+## 156     5   3                 Solar.R  149.0
+## 157     5   4                 Solar.R  313.0
+## 158     5   5                 Solar.R     NA
+## 159     5   6                 Solar.R     NA
+## 160     5   7                 Solar.R  299.0
+## 161     5   8                 Solar.R   99.0
+## 162     5   9                 Solar.R   19.0
+## 163     5  10                 Solar.R  194.0
+## 164     5  11                 Solar.R     NA
+## 165     5  12                 Solar.R  256.0
+## 166     5  13                 Solar.R  290.0
+## 167     5  14                 Solar.R  274.0
+## 168     5  15                 Solar.R   65.0
+## 169     5  16                 Solar.R  334.0
+## 170     5  17                 Solar.R  307.0
+## 171     5  18                 Solar.R   78.0
+## 172     5  19                 Solar.R  322.0
+## 173     5  20                 Solar.R   44.0
+## 174     5  21                 Solar.R    8.0
+## 175     5  22                 Solar.R  320.0
+## 176     5  23                 Solar.R   25.0
+## 177     5  24                 Solar.R   92.0
+## 178     5  25                 Solar.R   66.0
+## 179     5  26                 Solar.R  266.0
+## 180     5  27                 Solar.R     NA
+## 181     5  28                 Solar.R   13.0
+## 182     5  29                 Solar.R  252.0
+## 183     5  30                 Solar.R  223.0
+## 184     5  31                 Solar.R  279.0
+## 185     6   1                 Solar.R  286.0
+## 186     6   2                 Solar.R  287.0
+## 187     6   3                 Solar.R  242.0
+## 188     6   4                 Solar.R  186.0
+## 189     6   5                 Solar.R  220.0
+## 190     6   6                 Solar.R  264.0
+## 191     6   7                 Solar.R  127.0
+## 192     6   8                 Solar.R  273.0
+## 193     6   9                 Solar.R  291.0
+## 194     6  10                 Solar.R  323.0
+## 195     6  11                 Solar.R  259.0
+## 196     6  12                 Solar.R  250.0
+## 197     6  13                 Solar.R  148.0
+## 198     6  14                 Solar.R  332.0
+## 199     6  15                 Solar.R  322.0
+## 200     6  16                 Solar.R  191.0
+## 201     6  17                 Solar.R  284.0
+## 202     6  18                 Solar.R   37.0
+## 203     6  19                 Solar.R  120.0
+## 204     6  20                 Solar.R  137.0
+## 205     6  21                 Solar.R  150.0
+## 206     6  22                 Solar.R   59.0
+## 207     6  23                 Solar.R   91.0
+## 208     6  24                 Solar.R  250.0
+## 209     6  25                 Solar.R  135.0
+## 210     6  26                 Solar.R  127.0
+## 211     6  27                 Solar.R   47.0
+## 212     6  28                 Solar.R   98.0
+## 213     6  29                 Solar.R   31.0
+## 214     6  30                 Solar.R  138.0
+## 215     7   1                 Solar.R  269.0
+## 216     7   2                 Solar.R  248.0
+## 217     7   3                 Solar.R  236.0
+## 218     7   4                 Solar.R  101.0
+## 219     7   5                 Solar.R  175.0
+## 220     7   6                 Solar.R  314.0
+## 221     7   7                 Solar.R  276.0
+## 222     7   8                 Solar.R  267.0
+## 223     7   9                 Solar.R  272.0
+## 224     7  10                 Solar.R  175.0
+## 225     7  11                 Solar.R  139.0
+## 226     7  12                 Solar.R  264.0
+## 227     7  13                 Solar.R  175.0
+## 228     7  14                 Solar.R  291.0
+## 229     7  15                 Solar.R   48.0
+## 230     7  16                 Solar.R  260.0
+## 231     7  17                 Solar.R  274.0
+## 232     7  18                 Solar.R  285.0
+## 233     7  19                 Solar.R  187.0
+## 234     7  20                 Solar.R  220.0
+## 235     7  21                 Solar.R    7.0
+## 236     7  22                 Solar.R  258.0
+## 237     7  23                 Solar.R  295.0
+## 238     7  24                 Solar.R  294.0
+## 239     7  25                 Solar.R  223.0
+## 240     7  26                 Solar.R   81.0
+## 241     7  27                 Solar.R   82.0
+## 242     7  28                 Solar.R  213.0
+## 243     7  29                 Solar.R  275.0
+## 244     7  30                 Solar.R  253.0
+## 245     7  31                 Solar.R  254.0
+## 246     8   1                 Solar.R   83.0
+## 247     8   2                 Solar.R   24.0
+## 248     8   3                 Solar.R   77.0
+## 249     8   4                 Solar.R     NA
+## 250     8   5                 Solar.R     NA
+## 251     8   6                 Solar.R     NA
+## 252     8   7                 Solar.R  255.0
+## 253     8   8                 Solar.R  229.0
+## 254     8   9                 Solar.R  207.0
+## 255     8  10                 Solar.R  222.0
+## 256     8  11                 Solar.R  137.0
+## 257     8  12                 Solar.R  192.0
+## 258     8  13                 Solar.R  273.0
+## 259     8  14                 Solar.R  157.0
+## 260     8  15                 Solar.R   64.0
+## 261     8  16                 Solar.R   71.0
+## 262     8  17                 Solar.R   51.0
+## 263     8  18                 Solar.R  115.0
+## 264     8  19                 Solar.R  244.0
+## 265     8  20                 Solar.R  190.0
+## 266     8  21                 Solar.R  259.0
+## 267     8  22                 Solar.R   36.0
+## 268     8  23                 Solar.R  255.0
+## 269     8  24                 Solar.R  212.0
+## 270     8  25                 Solar.R  238.0
+## 271     8  26                 Solar.R  215.0
+## 272     8  27                 Solar.R  153.0
+## 273     8  28                 Solar.R  203.0
+## 274     8  29                 Solar.R  225.0
+## 275     8  30                 Solar.R  237.0
+## 276     8  31                 Solar.R  188.0
+## 277     9   1                 Solar.R  167.0
+## 278     9   2                 Solar.R  197.0
+## 279     9   3                 Solar.R  183.0
+## 280     9   4                 Solar.R  189.0
+## 281     9   5                 Solar.R   95.0
+## 282     9   6                 Solar.R   92.0
+## 283     9   7                 Solar.R  252.0
+## 284     9   8                 Solar.R  220.0
+## 285     9   9                 Solar.R  230.0
+## 286     9  10                 Solar.R  259.0
+## 287     9  11                 Solar.R  236.0
+## 288     9  12                 Solar.R  259.0
+## 289     9  13                 Solar.R  238.0
+## 290     9  14                 Solar.R   24.0
+## 291     9  15                 Solar.R  112.0
+## 292     9  16                 Solar.R  237.0
+## 293     9  17                 Solar.R  224.0
+## 294     9  18                 Solar.R   27.0
+## 295     9  19                 Solar.R  238.0
+## 296     9  20                 Solar.R  201.0
+## 297     9  21                 Solar.R  238.0
+## 298     9  22                 Solar.R   14.0
+## 299     9  23                 Solar.R  139.0
+## 300     9  24                 Solar.R   49.0
+## 301     9  25                 Solar.R   20.0
+## 302     9  26                 Solar.R  193.0
+## 303     9  27                 Solar.R  145.0
+## 304     9  28                 Solar.R  191.0
+## 305     9  29                 Solar.R  131.0
+## 306     9  30                 Solar.R  223.0
+## 307     5   1                    Wind    7.4
+## 308     5   2                    Wind    8.0
+## 309     5   3                    Wind   12.6
+## 310     5   4                    Wind   11.5
+## 311     5   5                    Wind   14.3
+## 312     5   6                    Wind   14.9
+## 313     5   7                    Wind    8.6
+## 314     5   8                    Wind   13.8
+## 315     5   9                    Wind   20.1
+## 316     5  10                    Wind    8.6
+## 317     5  11                    Wind    6.9
+## 318     5  12                    Wind    9.7
+## 319     5  13                    Wind    9.2
+## 320     5  14                    Wind   10.9
+## 321     5  15                    Wind   13.2
+## 322     5  16                    Wind   11.5
+## 323     5  17                    Wind   12.0
+## 324     5  18                    Wind   18.4
+## 325     5  19                    Wind   11.5
+## 326     5  20                    Wind    9.7
+## 327     5  21                    Wind    9.7
+## 328     5  22                    Wind   16.6
+## 329     5  23                    Wind    9.7
+## 330     5  24                    Wind   12.0
+## 331     5  25                    Wind   16.6
+## 332     5  26                    Wind   14.9
+## 333     5  27                    Wind    8.0
+## 334     5  28                    Wind   12.0
+## 335     5  29                    Wind   14.9
+## 336     5  30                    Wind    5.7
+## 337     5  31                    Wind    7.4
+## 338     6   1                    Wind    8.6
+## 339     6   2                    Wind    9.7
+## 340     6   3                    Wind   16.1
+## 341     6   4                    Wind    9.2
+## 342     6   5                    Wind    8.6
+## 343     6   6                    Wind   14.3
+## 344     6   7                    Wind    9.7
+## 345     6   8                    Wind    6.9
+## 346     6   9                    Wind   13.8
+## 347     6  10                    Wind   11.5
+## 348     6  11                    Wind   10.9
+## 349     6  12                    Wind    9.2
+## 350     6  13                    Wind    8.0
+## 351     6  14                    Wind   13.8
+## 352     6  15                    Wind   11.5
+## 353     6  16                    Wind   14.9
+## 354     6  17                    Wind   20.7
+## 355     6  18                    Wind    9.2
+## 356     6  19                    Wind   11.5
+## 357     6  20                    Wind   10.3
+## 358     6  21                    Wind    6.3
+## 359     6  22                    Wind    1.7
+## 360     6  23                    Wind    4.6
+## 361     6  24                    Wind    6.3
+## 362     6  25                    Wind    8.0
+## 363     6  26                    Wind    8.0
+## 364     6  27                    Wind   10.3
+## 365     6  28                    Wind   11.5
+## 366     6  29                    Wind   14.9
+## 367     6  30                    Wind    8.0
+## 368     7   1                    Wind    4.1
+## 369     7   2                    Wind    9.2
+## 370     7   3                    Wind    9.2
+## 371     7   4                    Wind   10.9
+## 372     7   5                    Wind    4.6
+## 373     7   6                    Wind   10.9
+## 374     7   7                    Wind    5.1
+## 375     7   8                    Wind    6.3
+## 376     7   9                    Wind    5.7
+## 377     7  10                    Wind    7.4
+## 378     7  11                    Wind    8.6
+## 379     7  12                    Wind   14.3
+## 380     7  13                    Wind   14.9
+## 381     7  14                    Wind   14.9
+## 382     7  15                    Wind   14.3
+## 383     7  16                    Wind    6.9
+## 384     7  17                    Wind   10.3
+## 385     7  18                    Wind    6.3
+## 386     7  19                    Wind    5.1
+## 387     7  20                    Wind   11.5
+## 388     7  21                    Wind    6.9
+## 389     7  22                    Wind    9.7
+## 390     7  23                    Wind   11.5
+## 391     7  24                    Wind    8.6
+## 392     7  25                    Wind    8.0
+## 393     7  26                    Wind    8.6
+## 394     7  27                    Wind   12.0
+## 395     7  28                    Wind    7.4
+## 396     7  29                    Wind    7.4
+## 397     7  30                    Wind    7.4
+## 398     7  31                    Wind    9.2
+## 399     8   1                    Wind    6.9
+## 400     8   2                    Wind   13.8
+## 401     8   3                    Wind    7.4
+## 402     8   4                    Wind    6.9
+## 403     8   5                    Wind    7.4
+## 404     8   6                    Wind    4.6
+## 405     8   7                    Wind    4.0
+## 406     8   8                    Wind   10.3
+## 407     8   9                    Wind    8.0
+## 408     8  10                    Wind    8.6
+## 409     8  11                    Wind   11.5
+## 410     8  12                    Wind   11.5
+## 411     8  13                    Wind   11.5
+## 412     8  14                    Wind    9.7
+## 413     8  15                    Wind   11.5
+## 414     8  16                    Wind   10.3
+## 415     8  17                    Wind    6.3
+## 416     8  18                    Wind    7.4
+## 417     8  19                    Wind   10.9
+## 418     8  20                    Wind   10.3
+## 419     8  21                    Wind   15.5
+## 420     8  22                    Wind   14.3
+## 421     8  23                    Wind   12.6
+## 422     8  24                    Wind    9.7
+## 423     8  25                    Wind    3.4
+## 424     8  26                    Wind    8.0
+## 425     8  27                    Wind    5.7
+## 426     8  28                    Wind    9.7
+## 427     8  29                    Wind    2.3
+## 428     8  30                    Wind    6.3
+## 429     8  31                    Wind    6.3
+## 430     9   1                    Wind    6.9
+## 431     9   2                    Wind    5.1
+## 432     9   3                    Wind    2.8
+## 433     9   4                    Wind    4.6
+## 434     9   5                    Wind    7.4
+## 435     9   6                    Wind   15.5
+## 436     9   7                    Wind   10.9
+## 437     9   8                    Wind   10.3
+## 438     9   9                    Wind   10.9
+## 439     9  10                    Wind    9.7
+## 440     9  11                    Wind   14.9
+## 441     9  12                    Wind   15.5
+## 442     9  13                    Wind    6.3
+## 443     9  14                    Wind   10.9
+## 444     9  15                    Wind   11.5
+## 445     9  16                    Wind    6.9
+## 446     9  17                    Wind   13.8
+## 447     9  18                    Wind   10.3
+## 448     9  19                    Wind   10.3
+## 449     9  20                    Wind    8.0
+## 450     9  21                    Wind   12.6
+## 451     9  22                    Wind    9.2
+## 452     9  23                    Wind   10.3
+## 453     9  24                    Wind   10.3
+## 454     9  25                    Wind   16.6
+## 455     9  26                    Wind    6.9
+## 456     9  27                    Wind   13.2
+## 457     9  28                    Wind   14.3
+## 458     9  29                    Wind    8.0
+## 459     9  30                    Wind   11.5
+## 460     5   1                    Temp   67.0
+## 461     5   2                    Temp   72.0
+## 462     5   3                    Temp   74.0
+## 463     5   4                    Temp   62.0
+## 464     5   5                    Temp   56.0
+## 465     5   6                    Temp   66.0
+## 466     5   7                    Temp   65.0
+## 467     5   8                    Temp   59.0
+## 468     5   9                    Temp   61.0
+## 469     5  10                    Temp   69.0
+## 470     5  11                    Temp   74.0
+## 471     5  12                    Temp   69.0
+## 472     5  13                    Temp   66.0
+## 473     5  14                    Temp   68.0
+## 474     5  15                    Temp   58.0
+## 475     5  16                    Temp   64.0
+## 476     5  17                    Temp   66.0
+## 477     5  18                    Temp   57.0
+## 478     5  19                    Temp   68.0
+## 479     5  20                    Temp   62.0
+## 480     5  21                    Temp   59.0
+## 481     5  22                    Temp   73.0
+## 482     5  23                    Temp   61.0
+## 483     5  24                    Temp   61.0
+## 484     5  25                    Temp   57.0
+## 485     5  26                    Temp   58.0
+## 486     5  27                    Temp   57.0
+## 487     5  28                    Temp   67.0
+## 488     5  29                    Temp   81.0
+## 489     5  30                    Temp   79.0
+## 490     5  31                    Temp   76.0
+## 491     6   1                    Temp   78.0
+## 492     6   2                    Temp   74.0
+## 493     6   3                    Temp   67.0
+## 494     6   4                    Temp   84.0
+## 495     6   5                    Temp   85.0
+## 496     6   6                    Temp   79.0
+## 497     6   7                    Temp   82.0
+## 498     6   8                    Temp   87.0
+## 499     6   9                    Temp   90.0
+## 500     6  10                    Temp   87.0
+## 501     6  11                    Temp   93.0
+## 502     6  12                    Temp   92.0
+## 503     6  13                    Temp   82.0
+## 504     6  14                    Temp   80.0
+## 505     6  15                    Temp   79.0
+## 506     6  16                    Temp   77.0
+## 507     6  17                    Temp   72.0
+## 508     6  18                    Temp   65.0
+## 509     6  19                    Temp   73.0
+## 510     6  20                    Temp   76.0
+## 511     6  21                    Temp   77.0
+## 512     6  22                    Temp   76.0
+## 513     6  23                    Temp   76.0
+## 514     6  24                    Temp   76.0
+## 515     6  25                    Temp   75.0
+## 516     6  26                    Temp   78.0
+## 517     6  27                    Temp   73.0
+## 518     6  28                    Temp   80.0
+## 519     6  29                    Temp   77.0
+## 520     6  30                    Temp   83.0
+## 521     7   1                    Temp   84.0
+## 522     7   2                    Temp   85.0
+## 523     7   3                    Temp   81.0
+## 524     7   4                    Temp   84.0
+## 525     7   5                    Temp   83.0
+## 526     7   6                    Temp   83.0
+## 527     7   7                    Temp   88.0
+## 528     7   8                    Temp   92.0
+## 529     7   9                    Temp   92.0
+## 530     7  10                    Temp   89.0
+## 531     7  11                    Temp   82.0
+## 532     7  12                    Temp   73.0
+## 533     7  13                    Temp   81.0
+## 534     7  14                    Temp   91.0
+## 535     7  15                    Temp   80.0
+## 536     7  16                    Temp   81.0
+## 537     7  17                    Temp   82.0
+## 538     7  18                    Temp   84.0
+## 539     7  19                    Temp   87.0
+## 540     7  20                    Temp   85.0
+## 541     7  21                    Temp   74.0
+## 542     7  22                    Temp   81.0
+## 543     7  23                    Temp   82.0
+## 544     7  24                    Temp   86.0
+## 545     7  25                    Temp   85.0
+## 546     7  26                    Temp   82.0
+## 547     7  27                    Temp   86.0
+## 548     7  28                    Temp   88.0
+## 549     7  29                    Temp   86.0
+## 550     7  30                    Temp   83.0
+## 551     7  31                    Temp   81.0
+## 552     8   1                    Temp   81.0
+## 553     8   2                    Temp   81.0
+## 554     8   3                    Temp   82.0
+## 555     8   4                    Temp   86.0
+## 556     8   5                    Temp   85.0
+## 557     8   6                    Temp   87.0
+## 558     8   7                    Temp   89.0
+## 559     8   8                    Temp   90.0
+## 560     8   9                    Temp   90.0
+## 561     8  10                    Temp   92.0
+## 562     8  11                    Temp   86.0
+## 563     8  12                    Temp   86.0
+## 564     8  13                    Temp   82.0
+## 565     8  14                    Temp   80.0
+## 566     8  15                    Temp   79.0
+## 567     8  16                    Temp   77.0
+## 568     8  17                    Temp   79.0
+## 569     8  18                    Temp   76.0
+## 570     8  19                    Temp   78.0
+## 571     8  20                    Temp   78.0
+## 572     8  21                    Temp   77.0
+## 573     8  22                    Temp   72.0
+## 574     8  23                    Temp   75.0
+## 575     8  24                    Temp   79.0
+## 576     8  25                    Temp   81.0
+## 577     8  26                    Temp   86.0
+## 578     8  27                    Temp   88.0
+## 579     8  28                    Temp   97.0
+## 580     8  29                    Temp   94.0
+## 581     8  30                    Temp   96.0
+## 582     8  31                    Temp   94.0
+## 583     9   1                    Temp   91.0
+## 584     9   2                    Temp   92.0
+## 585     9   3                    Temp   93.0
+## 586     9   4                    Temp   93.0
+## 587     9   5                    Temp   87.0
+## 588     9   6                    Temp   84.0
+## 589     9   7                    Temp   80.0
+## 590     9   8                    Temp   78.0
+## 591     9   9                    Temp   75.0
+## 592     9  10                    Temp   73.0
+## 593     9  11                    Temp   81.0
+## 594     9  12                    Temp   76.0
+## 595     9  13                    Temp   77.0
+## 596     9  14                    Temp   71.0
+## 597     9  15                    Temp   71.0
+## 598     9  16                    Temp   78.0
+## 599     9  17                    Temp   67.0
+## 600     9  18                    Temp   76.0
+## 601     9  19                    Temp   68.0
+## 602     9  20                    Temp   82.0
+## 603     9  21                    Temp   64.0
+## 604     9  22                    Temp   71.0
+## 605     9  23                    Temp   81.0
+## 606     9  24                    Temp   69.0
+## 607     9  25                    Temp   63.0
+## 608     9  26                    Temp   70.0
+## 609     9  27                    Temp   77.0
+## 610     9  28                    Temp   75.0
+## 611     9  29                    Temp   76.0
+## 612     9  30                    Temp   68.0</code></pre>
+<p>Pueden consultar el siguiente enlace en <a href="datacamp_wide_long">Data Camp</a> para reforzar los conceptos.</p>
+<p>El siguiente video es un resumen completo de lo que hemos visto hasta ahora.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I9A01WNOKUU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+
+</div>
 </div>
 </div>
 </div>
@@ -368,7 +1342,7 @@
           </div>
         </div>
       </div>
-<a href="requisitos-y-temario.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="funciones.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

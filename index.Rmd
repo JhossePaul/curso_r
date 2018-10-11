@@ -84,18 +84,10 @@ algo nuevo y un pequeño *background* de programación:
   - rio
 
 - Semana 5: Tidy data
-<<<<<<< HEAD
     - Tidy data
     - Wide and Long data
     - dcast y melt
     - merge, rbind, cbind
-=======
-  - Tidy data
-  - Wide data
-  - Long data
-  - dcast y melt
-  - merge, rbind, cbind
->>>>>>> 9ba4b0952f4acdbe330840610a902b21e6ff58e2
 
 - Semana 6: Introducción a data.table
   - Eficiencia de data.table, copy y punteros

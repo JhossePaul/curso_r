@@ -128,22 +128,55 @@ knitr::kable(inpc_dt[, .(TIME_PERIOD, OBS_VALUE)], caption = "INPC base Julio 20
 
 ```
 
-Existen dos operaciones fundamentales para transformar la estructura de la tabla `melt()` y `cast()`.
+Existen dos operaciones fundamentales para transformar la estructura de la tabla `melt()` y `dcast()`.
 
-- `melt()`: Sirve para agrupar las variables que se encuentran en columnas
-- `cast()`: 
+- `melt()`: Sirve para agrupar las variables que se encuentran como varias columnas en una sola. El nombre de las columnas se convierte en una etiqueta que transforma *wide data* a *long data*. 
+- `cast()`: Convierte en encabezados las etiquetas que se encuentren en una columna y rellena dichas columnas con los valores indicados. Se utiliza para convertir *long data* a *wide data*.
 
-```{r, melt-cast-graph, echo=F}
+```{r, melt-cast-graph, echo=F, fig.align='default',fig.cap= "Cambio de wide a long data"}
 knitr::include_graphics("assets/melt_cast.png")
 
 ```
 
-Estas operaciones pueden presentarse con otros nombres, dependiendo de la paquetería que utilicen; con `dplyr` las funciones son `gather()` y `spread()`, en `data.table` utilizaremos `melt.data.table()` y `dcast.data.table()` y finalmente las que usaremos en los siguientes ejercicios se encuentran en el paquete `reshape2` son `melt()` y `dcast()`.
+Estas operaciones pueden presentarse como funciones con otros nombres, dependiendo de la paquetería que utilicen:
 
-Pueden consultar el siguiente enlace en [Data_Camp](datacamp_wide_long) para reforzar los conceptos. 
+- Con `dplyr` las funciones son `gather()` y `spread()`.
+- En `data.table` utilizaremos `melt.data.table()` y `dcast.data.table()`
+- Para `reshape2` son `melt()` y `dcast()`.
+
+Éstas últimas serán las que utilizaremos para los ejemplos de este capítulo.
+
+### Funciones `melt()` y `dcast()`
+
+Son parte del paquete `reshape2` creado por [Hadley Wickham](HW) y se utilizan de la siguiente forma:
+
+#### `melt()`
+
+Cuenta con los siguientes parámetros `data`, `id.vars`, `variable.name`,`value.name`.
+
+
+```{r,help-melt-data-frame, echo=F}
+?reshape2::melt.data.frame()
+```
+
+```{r, using-melt, echo=T}
+
+air_quality <- airquality
+
+head(air_quality, 10)
+
+air_quality_long <- 
+reshape2::melt(data = air_quality, id.vars = c("Month", "Day"), 
+               variable.name = "meterogical_measurement", 
+               value.name = "values")
+
+head(air_quality_long)
+```
+Pueden consultar el siguiente enlace en [Data Camp](datacamp_wide_long) para reforzar los conceptos. 
 
 El siguiente video es un resumen completo de lo que hemos visto hasta ahora.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/I9A01WNOKUU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-[Data_Camp]: https://www.datacamp.com/community/tutorials/long-wide-data-R
+[Data Camp]: https://www.datacamp.com/community/tutorials/long-wide-data-R
+[Hadley Wickham]: http://hadley.nz/

@@ -39,5 +39,168 @@ f <- function(x, y, z) {
   x / y / z
 }
 
+f(1, 2, 3)
+f(1, z = 2, y = 3)
+f(z = 1, 2, x = 3)
+```
 
+## Composicion de funciones
+
+La composición de funciones está definida de la siguiente manera:
+  
+$$g \circ f = g(f(x))$$
+
+En R, la composición de funciones está provista por la librería `magrittr`. El
+operador `%>%` es el operador de composición de funciones definido de la
+siguiente manera:
+
+$$f(x) %>% g = g(f(x))$$
+
+Esto nos permite ejecutar funciones de manera continua sin perder facilidad de
+lectura en nuestro código, e.g.
+
+```{r composition}
+library(magrittr)
+
+1:10 %>% 
+  add(100) %>% 
+  divide_by(10) %>% 
+  multiply_by(10) %>% 
+  subtract(100)
+```
+
+En todas las secciones subsecuentes usaremos esta notación para nuestros
+ejemplos.
+
+## Vocabulario
+
+En general, todas las funciones matetmáticas están definidas para vectores y 
+matrices. A continuación listamos algunas de ellas:
+
+```
+sin, cos, tan, acos, asin, atan, atan2
+sum, prod, max, min, range, pmax, pmin
+cumsum, cumprod, cummax, cummin 
+abs, log, exp, sign
+floor, ceil, round, trunc, signif
+mean, median, cor, sd, var, 
+sample, seq, rep, rev
+```
+
+Adicional, tenemos el operador secuencia de enteros `:`.
+
+## Extractores
+
+Sabemos que todo es una función en R. Y sabemos que las estructuras de datos
+fundamentales son los vectores y la listas. Entonces procedemos a explicar
+como usar funciones para extraer datos de las estructuras fundamentales.
+
+Para extraer datos de un vector ocupamos la función `[(x)` como en todos
+los demás lenguajes de programación, donde `x` es el índice del elemento que
+queremos extraer, iniciando en 1. Es común que desarrolladores de otros
+lenguajes de programación encuentren extraña esta notación, ya que generalmente
+un índice inicia en 0. `x` puede ser un vector de índices, en ese caso de
+devuelve un subvector con los elementos de las posiciones solicitadas:
+
+```{r simple_extractor}
+integer_vector <- 1:10 * 100
+integer_vector[1]
+integer_vector[2:5]
+integer_vector[c(3, 5, 6, 8, 1)]
+```
+
+Para extraer datos de una lista podemos ocupar la función `[`, la cual
+devolverá una lista con los elementos de las posiciones solicitadas, o bien, 
+la función `[[` para extraer un elemento de la lista. Debido a la naturaleza de
+las listas, podemos ocupar múltiples funciones de extractor para obtener
+elementos anidados:
+
+```{r}
+example_list <- list(
+  list(
+    1:10,
+    runif(10),
+    rnorm(10)
+  ),
+  letters[1:10]
+)
+example_list[2]
+class(example_list[2])
+
+example_list[2][5]
+
+example_list[[1]][[2]][1]
+```
+
+En el caso de que un vector o una lista tengan nombres, podemos usar el
+nombre en la función `[` o en listas, usar directamente el extractor `$`:
+
+```{r}
+named_vector <- c("uno" = 1, "dos" = 2, "tres" = 3)
+named_vector["uno"]
+
+named_list <- list(
+  numeric_vectors = list(
+    integer_vector = c(1, 2, 3, 4, 5, 6, 7 ,8, 9, 0),
+    uniform_random = runif(10),
+    normal_random = rnorm(10)
+  ),
+  character_vector = letters[1:10]
+)
+named_list[["numeric_vectors"]]$integer_vector
+```
+
+Para `matrix`, `array`, `data.frame` y `data.table`, la función `[` se comporta
+de manera diferente. Para empezar, puede recibir tantos argumentos como
+dimensiones tenga el array, en el caso de `data.frame` y `matrix`, recibe dos
+argumentos. El primero es la posición que queremos extraer en la primera
+dimensión (filas), el segundo es la posición que queremos extraer en la segunda
+dimensión (columnas). En caso de ser omitida una dimensión, se toma todos los
+valores posibles, e.g.
+
+```{r extractores_data_frame}
+iris[1, 1]
+iris[1:5, 1:5]
+iris[1, ]
+iris[, 1]
+
+
+iris3[1, 1:4, 3]
+iris3[, , 1] [1, ][1]
+```
+
+Siendo el `data.frame` una lista nombrada, también podemos ocupar el operador
+`$`:
+
+```{r series_data_frame}
+iris$Species
+```
+
+Finalmente, el operador `[` tiene una funcionalidad especial en `data.table`,
+cumpliendo con la mayoría de las operaciones que verémos a lo largo del curso.
+En este momento nos limitaremos únicamente a ver las diferencias con
+`data.frame`:
+
+
+```{r extractor_data_table}
+library(data.table)
+
+dtiris <- as.data.table(iris)
+class(dtiris)
+
+# 1. El primer argumento del extractor en data.table siempre extrae filas
+iris[2] %>% head
+dtiris[1]
+
+# 2. Cuando el segundo argumento es un nombre, no se requieren comillas
+iris[, "Species"]
+dtiris[, Species]
+
+# 3. Cuando el segundo argumento es un conjunto de columnas, se puede pasar una
+# lista de expresiones sin comillas
+iris[, c("Sepal.Length", "Sepal.Width")] %>% head
+dtiris[, list(Sepal.Length, Sepal.Width)] %>% head
+
+# 4. En un contexto de data.table, el . significa lista
+dtiris[, .(Sepal.Length, Sepal.Width)] %>% head
 ```
